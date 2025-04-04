@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../models/event.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../models/event.dart';
 import '../services/utils.dart';
 
 class EventDetailScreen extends StatelessWidget {
@@ -10,8 +10,9 @@ class EventDetailScreen extends StatelessWidget {
   const EventDetailScreen({Key? key, required this.event}) : super(key: key);
 
   void _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
     } else {
       throw 'Could not launch $url';
     }
@@ -20,96 +21,138 @@ class EventDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Utils utils = Utils(context);
-    final themeState = utils.getTheme;
     final Color color = utils.color;
-    Size size = utils.getScreenSize;
+    Size size = MediaQuery.of(context).size;
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
           event.title,
-          style: GoogleFonts.montserrat(fontSize: 22, fontWeight: FontWeight.bold),
+          style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
       body: TweenAnimationBuilder(
-        duration: Duration(milliseconds: 600),
+        duration: const Duration(milliseconds: 600),
         tween: Tween<double>(begin: 0.8, end: 1),
         curve: Curves.easeOut,
         builder: (context, double scale, child) {
           return Transform.scale(
             scale: scale,
-            child: Opacity(
-              opacity: scale,
-              child: child,
-            ),
+            child: Opacity(opacity: scale, child: child),
           );
         },
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // ✅ Event Image with Animation
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.network(
-                  event.imageUrl,
-                  width: double.infinity,
-                  height: 200,
-                  fit: BoxFit.cover,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // ✅ Image Slideshow
+                imageSlideshow(event.imageUrl, size.width),
+
+                SizedBox(height: size.height * 0.02),
+
+                // ✅ Event Title
+                Text(
+                  event.title,
+                  style: GoogleFonts.poppins(
+                      fontSize: size.width * 0.06,
+                      fontWeight: FontWeight.bold,
+                      color: color),
+                  textAlign: TextAlign.center,
                 ),
-              ),
-              SizedBox(height: 16),
 
-              // ✅ Event Title
-              Text(
-                event.title,
-                style: GoogleFonts.montserrat(fontSize: 24, fontWeight: FontWeight.bold, color: color),
-                textAlign: TextAlign.center,
-              ),
+                // ✅ Event Organizer
+                SizedBox(height: size.height * 0.01),
+                Text(
+                  "Organized by: ${event.organizer}",
+                  style: GoogleFonts.poppins(
+                      fontSize: size.width * 0.04,
+                      fontWeight: FontWeight.w500,
+                      color:  Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white70
+                          : Colors.black54,),
+                ),
 
-              // ✅ Event Organizer
-              SizedBox(height: 8),
-              Text(
-                "Organized by: ${event.organizer}",
-                style: GoogleFonts.lora(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.grey),
-              ),
+                // ✅ Date, Time, Venue
+                SizedBox(height: size.height * 0.02),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // ✅ Time & Date in One Row
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconText(
+                          icon: Icons.access_time,
+                          text: event.time,
+                          iconColor: Colors.green,
+                          textColor: color,
+                        ),
+                        IconText(
+                          icon: Icons.date_range,
+                          text: event.actualDate,
+                          iconColor: Colors.blue,
+                          textColor: color,
+                        ),
+                      ],
+                    ),
 
-              // ✅ Date, Time, Venue (in a Row)
-              SizedBox(height: 12),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconText(icon: Icons.date_range, text: event.actualDate, iconColor: Colors.blue),
-                  IconText(icon: Icons.access_time, text: event.time, iconColor: Colors.green),
-                  IconText(icon: Icons.location_on, text: event.venue, iconColor: Colors.red),
-                ],
-              ),
+                    SizedBox(height: 8), // Space between time-date and venue
 
-              SizedBox(height: 16),
+                    // ✅ Venue in New Line
+                    IconText(
+                      icon: Icons.location_on,
+                      text: event.venue,
+                      iconColor: Colors.red,
+                      textColor: color,
+                    ),
+                  ],
+                ),
 
-              // ✅ Event Description
-              Text("Description", style: GoogleFonts.montserrat(fontSize: 20, color: color)),
-              Text(event.description, style: GoogleFonts.lora(fontSize: 16, color: Colors.grey)),
+                SizedBox(height: size.height * 0.02),
 
-              Spacer(),
+                // ✅ Event Description
+                Text("Description",
+                    style: GoogleFonts.poppins(
+                        fontSize: size.width * 0.05, color: color)),
+                Text(event.description,
+                    style: GoogleFonts.poppins(
+                        fontSize: size.width * 0.04, color:  Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white70
+                        : Colors.black54,)),
 
-              // ✅ Register Button Logic
-              Center(
-                child: ElevatedButton(
-                  onPressed: event.registrationUrl.isNotEmpty
-                      ? () => _launchURL(event.registrationUrl)
-                      : null, // Disabled if no link
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 12),
-                    textStyle: GoogleFonts.lora(fontSize: 18, fontWeight: FontWeight.bold),
-                    backgroundColor: event.registrationUrl.isNotEmpty ? Colors.blue : Colors.grey,
+                SizedBox(height: size.height * 0.03),
+
+                // ✅ Register Button
+                Center(
+                  child: ElevatedButton(
+                    onPressed: event.registrationUrl.isNotEmpty
+                        ? () => _launchURL(event.registrationUrl)
+                        : null, // Disabled if no link
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: size.width * 0.2, vertical: 12),
+                      textStyle: GoogleFonts.poppins(
+                          fontSize: size.width * 0.045,
+                          fontWeight: FontWeight.bold),
+                      backgroundColor: event.registrationUrl.isNotEmpty
+                          ? Colors.blue
+                          : Colors.grey,
+                    ),
+                    child: Text(
+                      event.registrationUrl.isNotEmpty
+                          ? "Register Now"
+                          : "Stay Tuned",
+                      style: GoogleFonts.poppins(color: color),
+                    ),
                   ),
-                  child: Text(event.registrationUrl.isNotEmpty ? "Register Now" : "Stay Tuned", style: GoogleFonts.lora(color: Colors.black),),
                 ),
-              ),
-            ],
+
+                SizedBox(height: size.height * 0.03),
+              ],
+            ),
           ),
         ),
       ),
@@ -117,21 +160,58 @@ class EventDetailScreen extends StatelessWidget {
   }
 }
 
+// ✅ Image Slideshow Method with A4 Aspect Ratio
+Widget imageSlideshow(List<String> imageUrls, double screenWidth) {
+  double a4Height = screenWidth * 1.414; // A4 aspect ratio (1:1.414)
+
+  return SizedBox(
+    height: a4Height,
+    child: PageView.builder(
+      itemCount: imageUrls.length,
+      itemBuilder: (context, index) {
+        return ClipRRect(
+          borderRadius: BorderRadius.circular(12),
+          child: Image.network(
+            imageUrls[index],
+            width: double.infinity,
+            height: a4Height,
+            fit: BoxFit.fill,
+          ),
+        );
+      },
+    ),
+  );
+}
+
+
+
 // ✅ Reusable Widget for Icon + Text
 class IconText extends StatelessWidget {
   final IconData icon;
   final String text;
   final Color iconColor;
+  final Color textColor;
 
-  const IconText({Key? key, required this.icon, required this.text, required this.iconColor}) : super(key: key);
+  const IconText(
+      {Key? key,
+        required this.icon,
+        required this.text,
+        required this.iconColor,
+        required this.textColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double fontSize = MediaQuery.of(context).size.width * 0.04;
     return Row(
       children: [
-        Icon(icon, size: 20, color: iconColor),
+        Icon(icon, size: fontSize * 1.2, color: iconColor),
         SizedBox(width: 5),
-        Text(text, style: GoogleFonts.lora(fontSize: 16, fontWeight: FontWeight.w500)),
+        Text(text,
+            style: GoogleFonts.poppins(
+                fontSize: fontSize,
+                fontWeight: FontWeight.w500,
+                color: textColor)),
       ],
     );
   }

@@ -168,7 +168,7 @@ class CategoriesScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: Text(
           'Theta 3 days celebration ',
-          style: GoogleFonts.montserrat(
+          style: GoogleFonts.poppins(
               color: color, fontSize: 25, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,

@@ -4,7 +4,7 @@ class Event {
   final String date;
   final String time;
   final String venue;
-  final String imageUrl;
+  final List<String> imageUrl;
   final String organizer;
   final String registrationUrl;
   final String clusterName;

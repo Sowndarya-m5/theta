@@ -18,48 +18,213 @@ class _EventScreenState extends State<EventScreen> {
 
   List<Event> events = [
 
+    //Day 1
 
-    //access india
     Event(
-      title: "Mystic Fables",
-      description:" Round 1 - Balloon bluster \n Round 2 - Play with english \n Round 3 - Pyramid puzzle",
+      title: "Model Verse",
+      description:" Round 1 - Detect the scenes \n Round 2 - Walker Bottle \n Round 3 - Ballon pyramid \n Round 4 - Building",
       date: "Day 1",
       actualDate: "11.4.2025",
-      time: "9:30 AM - 12:30 PM",
-      venue: "309,310",
-      imageUrl: "asset/pexels-photo-354962.jpeg",
-      organizer: "Jooshini S",
+      time:  "11:00 AM - 1:00 PM",
+      venue: "Drawing Hall",
+      imageUrl: [
+        "asset/events/Biogenesis/Modelverse - Biogenesis_1/Modelverse-Biogenesis_1-1.png",
+        "asset/events/Biogenesis/Modelverse - Biogenesis_1/Modelverse-Biogenesis_1-2.png",
+        ],
+      organizer: "Uvaijul Kalfan U",
       registrationUrl: "",
-      clusterName: "Access India present",
-    ),// waiting reglink,image ✅
+      clusterName: "Biogenesis present",
+    ),//registerlink, orgname,des
 
     Event(
-      title: "F Cube",
+      title: "Robo soccer",
       description: " Round 1 - Find \n Round 2 - Fetch \n Round 3 - Fun ",
-      date: "Day 2",
-      actualDate: "12.4.2025",
-      time: "9:30 AM - 12:30 PM",
-      venue: "Drawing Hall",
-      imageUrl: "asset/camer.jpg",
+      date: "Day 1",
+      actualDate: "11.4.2025",
+      time: "11:00 AM - 12:00 PM",
+      venue: "Basketball court",
+      imageUrl: [
+        "asset/events/Robotics/RoboSoccer-Robotics_1/RoboSoccer-Robotics_1-1.png",
+        "asset/events/Robotics/RoboSoccer-Robotics_1/RoboSoccer-Robotics_1-2.png",
+        ],
+      organizer: "Afreen Banu T",
+      registrationUrl: "",
+      clusterName: "Robotics present",
+    ),//reglink, des, orgname
+
+    Event(
+      title: "Tech Titans",
+      description:" Round 1 - Rapid fire \n Round 2 - Fault-finding \n Round 3 - AI gaming ",
+      date: "Day 1",
+      actualDate: "11.4.2025",
+      time: "11:00 AM - 01:00 PM",
+      venue: "402",
+      imageUrl: [
+        "asset/events/Electronica/TechTitans-Electronica_1/TechTitans-Electronica_1-1.png",
+        "asset/events/Electronica/TechTitans-Electronica_1/TechTitans-Electronica_1-2.png",
+      ],
+      organizer: "M.Yoshitha\nVaitheeshwaran",
+      registrationUrl: "",
+      clusterName: "Electronica present",
+    ),// reglink ✅
+
+    Event(
+      title: "Illuminati ",
+      description: " Round 1 - Blerg Bits  \n Round 2 - Wacky Wizzle \n Round 3 - Aurora Ascent",
+      date: "Day 1",
+      actualDate: "11.4.2025",
+      time: "11:00 AM - 1:00 PM",
+      venue: "509",
+      imageUrl: ["asset/events/Optica/Event1/illuminati-Optica_1.jpg",
+        "asset/events/Optica/Event1/illuminati-Optica_1(2).jpg",
+      ],
+      organizer: "Akshaya A",
+      registrationUrl: "",
+      clusterName: "Optica present",
+    ),//waiting reglink  ✅
+
+    Event(
+      title: "KGF (Knock Guess Fix)",
+      description: " Round 1 - Find \n Round 2 - Fetch \n Round 3 - Fun ",
+      date: "Day 1",
+      actualDate: "11.4.2025",
+      time: "11:00 AM - 02:00 PM",
+      venue: "309, 310",
+      imageUrl: [
+        "asset/events/AccessIndia/Event1/KGF-AccessIndia_1(1).png",
+        "asset/events/AccessIndia/Event1/KGF-AccessIndia_1(2).png",
+      ],
       organizer: "Afreen Banu T",
       registrationUrl: "",
       clusterName: "Access India present",
-    ),// waiting reglink,image ✅
+    ),// waiting reglink, orgname , des✅
 
-
-    //Biogenesis
     Event(
-      title: "Model Exhibt",
+      title: "Tech Thon",
       description: " Round 1 -  \n Round 2 -  \n Round 3 -  ",
       date: "Day 1",
       actualDate: "11.4.2025",
       time: "11:00 AM - 1:00 PM",
-      venue: "Drawing Hall",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Wasim M",
+      venue: "Lab 1",
+      imageUrl: [
+        "asset/events/Informatica/Event1/Tekathon-Informatica_1-1.png",
+        "asset/events/Informatica/Event1/Tekathon-Informatica_1-2.png",
+      ],
+      organizer: "Ramaguru S",
       registrationUrl: "",
-      clusterName: "Biogenesis present",
-    ),// waiting reglink, image , des ✅
+      clusterName: "Informatica present",
+    ),//waiting des,  ,reglink ✅
+
+    Event(
+      title: "Tri Game Showdown",
+      description: " Round 1 - Spot the price  \n Round 2 - Break the rope \n Round 3 - Guess the tagline ",
+      date: "Day 1",
+      actualDate: "11.4.2025",
+      time: "11:00 AM - 3:00 PM",
+      venue: "303",
+      imageUrl: [
+        "asset/events/Strategia/TriGame-Strategia_3/TriGame-Strategia_3-1.png",
+        "asset/events/Strategia/TriGame-Strategia_3/TriGame-Strategia_3-2.png",
+      ],
+      organizer: "Theetchana S",
+      registrationUrl: "",
+      clusterName: "Strategia present",
+    ),//waiting reglink, ✅
+
+    Event(
+      title: "Mystic Mind",
+      description: " Round 1 - Link & lens \n Round 2 - Touch it..fell it...find it... \n Round 3 - Paper tower panic ",
+      date: "Day 1",
+      actualDate: "11.4.2025",
+      time: "11:00 AM - 5:00 PM",
+      venue: "202",
+      imageUrl: [
+        "asset/events/Mathematica/MysticMind-Mathematica_1/MysticMind-Mathematica_1-1.png",
+        "asset/events/Mathematica/MysticMind-Mathematica_1/MysticMind-Mathematica_1-2.png",
+        "asset/events/Mathematica/MysticMind-Mathematica_1/MysticMind-Mathematica_1-3.png",
+      ],
+      organizer: "Kaviyasri G",
+      registrationUrl: "",
+      clusterName: "Mathematica present",
+    ),//waiting reglink, image  ✅
+
+    Event(
+      title: "Lucky Box",
+      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
+      date: "Day 1",
+      actualDate: "11.4.2025",
+      time: "11:00 AM - 3:00 PM",
+      venue: "Near basketball court",
+      imageUrl: [ "asset/events/Sportiva/event1/LuckyBox-Sportiva_D1.png",],
+      organizer: "Yamini M\nYazhini B\nNithiyasri",
+      registrationUrl: "",
+      clusterName: "Sportiva present",
+    ),//waiting reglink, des ✅
+
+    Event(
+      title: "Uriyadi",
+      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
+      date: "Day 1",
+      actualDate: "11.4.2025",
+      time: "11:00 AM - 2:30 PM",
+      venue: "Near basketball court",
+      imageUrl: ["asset/events/Sportiva/event1/Uriyadi-Sportiva_D1.png",],
+      organizer: "Yuvaraj A\nSrinivas C\nManisai A",
+      registrationUrl: "",
+      clusterName: "Sportiva present",
+    ),//waiting reglink,  des ✅
+
+    Event(
+      title: "One Hour Cricket",
+      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
+      date: "Day 1",
+      actualDate: "11.4.2025",
+      time: "12:00 PM - 1:30 PM",
+      venue: "Cricket Ground ",
+      imageUrl: ["asset/events/Sportiva/event1/OneOver-Sportiva_D1.png",],
+      organizer: "Aswin G\nPrasanth M\nManisai A\nKeerthivas I",
+      registrationUrl: "",
+      clusterName: "Sportiva present",
+    ),//waiting reglink, , des ✅
+
+    Event(
+      title: "Shape cut",
+      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
+      date: "Day 1",
+      actualDate: "11.4.2025",
+      time: "12:00 AM - 3:00 PM",
+      venue: "Stall",
+      imageUrl: [ "asset/events/Sportiva/event1/LuckyBox-Sportiva_D1.png",],
+      organizer: "Yamini M\nYazhini B\nNithiyasri",
+      registrationUrl: "",
+      clusterName: "Sportiva present",
+    ),//waiting reglink, image, des ✅
+
+    Event(
+      title: "Match the Bottle",
+      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
+      date: "Day 1",
+      actualDate: "11.4.2025",
+      time: "12:00 PM - 2:30 PM",
+      venue: "Stall",
+      imageUrl: ["asset/events/Sportiva/event2/MatchtheBottle-Sportiva_D2.png",],
+      organizer: "Kavya B\nVijaya kamachi A\nSujitha  A",
+      registrationUrl: "",
+      clusterName: "Sportiva present",
+    ),//waiting reglink, des ✅
+
+    Event(
+      title: "Dodge Ball",
+      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
+      date: "Day 1",
+      actualDate: "11.4.2025",
+      time: "12:00 PM - 2:30 PM",
+      venue: "Stall",
+      imageUrl: ["asset/events/Sportiva/event1/DodgeBall-Sportiva_D1.png",],
+      organizer: "Monisha Kamala S\nGovindaraj A\nThirumal eswar A\nSriram S",
+      registrationUrl: "",
+      clusterName: "Sportiva present",
+    ),//waiting reglink,  des ✅
 
     Event(
       title: "Beyond The Limits",
@@ -68,106 +233,59 @@ class _EventScreenState extends State<EventScreen> {
       actualDate: "11.4.2025",
       time:  "2:00 PM - 5:00 PM",
       venue: "Drawing Hall",
-      imageUrl: "asset/camer.jpg",
+      imageUrl: [
+        "asset/events/Biogenesis/Beyondthelimits-Biogenesis_2/Beyondthelimits-Biogenesis_2-1.png",
+        "asset/events/Biogenesis/Beyondthelimits-Biogenesis_2/Beyondthelimits-Biogenesis_2-2.png",
+      ],
       organizer: "Uvaijul Kalfan U",
       registrationUrl: "",
       clusterName: "Biogenesis present",
-    ),// waiting reglink, image   ✅
+    ),// waiting reglink,   ✅
 
     Event(
-      title: "Wit Wizard War",
-      description: " Round 1 - Handy cortex \n Round 2 - Witty word play \n Round 3 - Mime and Maze",
-      date: "Day 2",
-      actualDate: "12.4.2025",
-      time: "2:00 PM - 5:00 PM",
-      venue: "T&P Hall",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Sowmiya R",
-      registrationUrl: "",
-      clusterName: "Biogenesis present",
-    ),//waiting reglink, image   ✅
-
-    //electronica
-    Event(
-      title: "Tech Titans",
-      description:" Round 1 - Rapid fire \n Round 2 - Fault-finding \n Round 3 - AI gaming ",
-      date: "Day 2",
-      actualDate: "12.4.2025",
-      time: "9:30 AM - 12:30 PM",
-      venue: "402",
-      imageUrl: "asset/camer.jpg",
-      organizer: "M.Yoshitha\nVaitheeshwaran",
-      registrationUrl: "",
-      clusterName: "Electronica present",
-    ),// waiting time, image, reglink, venue  ✅
-
-    Event(
-      title: "The Great Treasure Hunt",
-      description: " Round 1 -  \n Round 2 -  \n Round 3 - ",
+      title: " Pattukondi chooddam [Treasure Hunt]",
+      description: " Round 1 -   \n Round 2 - \n Round 3 -  ",
       date: "Day 1",
       actualDate: "11.4.2025",
-      time: "9:30 AM - 12:30 PM",
+      time: "2:00 PM - 3:30 PM",
+      venue: "316",
+      imageUrl: ["asset/events/VinodhaVaahini/TreasureHunt-VinodhaVaahini_1.png",],
+      organizer: " A.Yaswanth \nS.Vedasri",
+      registrationUrl: "",
+      clusterName: "Vinodha Vahini present",
+    ),//waiting reglink,  des ✅
+
+    Event(
+      title: "A Tamil drama",
+      description: " Round 1 -   \n Round 2 - \n Round 3 -  ",
+      date: "Day 1",
+      actualDate: "11.4.2025",
+      time: "2:00 PM - 3:00 PM",
+      venue: "Auditorium",
+      imageUrl: ["asset/events/Equilibria/Koothupatrai-Equilibria_3.png",],
+      organizer: " A.Yaswanth \nS.Vedasri",
+      registrationUrl: "",
+      clusterName: "Equillibria  present",
+    ),//waiting reglink, orgname, des ✅
+
+    //Day 2
+
+    Event(
+      title: "Clash of Minds",
+      description: " Round 1 -  \n Round 2 -  \n Round 3 - ",
+      date: "Day 2",
+      actualDate: "12.4.2025",
+      time: "9:00 AM - 02:00 PM",
       venue: "402",
-      imageUrl: "asset/camer.jpg",
+      imageUrl: [
+        "asset/events/Electronica/ClashofMinds-Electronica_2/ClashofMinds-Electronica_2-1.png",
+        "asset/events/Electronica/ClashofMinds-Electronica_2/ClashofMinds-Electronica_2-2.png",
+        "asset/events/Electronica/ClashofMinds-Electronica_2/ClashofMinds-Electronica_2-3.png",
+        ],
       organizer: "K.Nirmal\nK.Revanth",
       registrationUrl: "",
       clusterName: "Electronica present",
     ), //waiting time, reglink, image  ✅
-
-
-    //Informatica
-    Event(
-      title: "Tech Thon",
-      description: " Round 1 -  \n Round 2 -  \n Round 3 -  ",
-      date: "Day 1",
-      actualDate: "11.4.2025",
-      time: "10:00 AM - 1:00 PM",
-      venue: "Lab 1",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Ramaguru S",
-      registrationUrl: "",
-      clusterName: "Informatica present",
-    ),//waiting des,  image,reglink ✅
-
-    Event(
-      title: "Code Master",
-      description: " Round 1 - Easy \n Round 2 - Medium \n Round 3 - Hard",
-      date: "Day 2",
-      actualDate: "12.4.2025",
-      time: "10:00 AM - 1:00 PM",
-      venue: "Lab 1",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Shobia R",
-      registrationUrl: "",
-      clusterName: "Informatica present",
-    ),//waiting reglink,image ✅
-
-    Event(
-      title: "Tech Talent",
-      description: " Round 1 - Easy  \n Round 2 - Medium \n Round 3 - Hard ",
-      date: "Day 3",
-      actualDate: "13.4.2025",
-      time: "9:30 AM - 12:30 PM",
-      venue: "Lab 1",
-      imageUrl: "asset/camer.jpg",
-      organizer: "RajaSri S",
-      registrationUrl: "",
-      clusterName: "Informatica present",
-    ),//waiting reglink,image,time  ✅
-
-    //Mathematica
-    Event(
-      title: "Mystic Mind",
-      description: " Round 1 - Link & lens \n Round 2 - Touch it..fell it...find it... \n Round 3 - Paper tower panic ",
-      date: "Day 1",
-      actualDate: "11.4.2025",
-      time: "11:00 AM - 5:00 PM",
-      venue: "202",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Kaviyasri G",
-      registrationUrl: "",
-      clusterName: "Mathematica present",
-    ),//waiting reglink, image  ✅
 
     Event(
       title: "Rhythm Quest",
@@ -176,7 +294,12 @@ class _EventScreenState extends State<EventScreen> {
       actualDate: "12.4.2025",
       time: "9:30 AM - 4:00 PM",
       venue: "202",
-      imageUrl: "asset/camer.jpg",
+      imageUrl: [
+        "asset/events/Mathematica/RhythmQuest-Mathematica_2/RhythmQuest-Mathematica_2-1.png",
+        "asset/events/Mathematica/RhythmQuest-Mathematica_2/RhythmQuest-Mathematica_2-2.png",
+        "asset/events/Mathematica/RhythmQuest-Mathematica_2/RhythmQuest-Mathematica_2-3.png",
+        "asset/events/Mathematica/RhythmQuest-Mathematica_2/RhythmQuest-Mathematica_2-4.png",
+      ],
       organizer: "Srinidhi C",
       registrationUrl: "",
       clusterName: "Mathematica present",
@@ -189,13 +312,33 @@ class _EventScreenState extends State<EventScreen> {
       actualDate: "12.4.2025",
       time: "9:30 AM - 4:00 PM",
       venue: "211",
-      imageUrl: "asset/camer.jpg",
+      imageUrl: [
+        "asset/events/Mathematica/NumberNinjas-Mathematica_3/NumberNinjas-Mathematica_3-1.png",
+        "asset/events/Mathematica/NumberNinjas-Mathematica_3/NumberNinjas-Mathematica_3-2.png",
+        "asset/events/Mathematica/NumberNinjas-Mathematica_3/NumberNinjas-Mathematica_3-3.png",
+        "asset/events/Mathematica/NumberNinjas-Mathematica_3/NumberNinjas-Mathematica_3-4.png",
+      ],
       organizer: "Bhadhra Priya R",
       registrationUrl: "",
       clusterName: "Mathematica present",
     ),//waiting reglink, image ✅
 
-    //Strategia
+    Event(
+      title: "F Cube",
+      description: " Round 1 - Find \n Round 2 - Fetch \n Round 3 - Fun ",
+      date: "Day 2",
+      actualDate: "12.4.2025",
+      time: "9:30 AM - 12:30 PM",
+      venue: "Drawing Hall",
+      imageUrl: [
+        "asset/events/AccessIndia/Event2/FCube-AccessIndia_2.png",
+        "asset/events/AccessIndia/Event2/FCube-AccessIndia_2(2).png",
+      ],
+      organizer: "Afreen Banu T",
+      registrationUrl: "",
+      clusterName: "Access India present",
+    ),// waiting reglink,image ✅
+
     Event(
       title: "RRR[Reverse, React, Recognize]",
       description: " Round 1 -  Guess the song  \n Round 2 -  Cup Chasing \n Round 3 - Find the logo ",
@@ -203,52 +346,27 @@ class _EventScreenState extends State<EventScreen> {
       actualDate: "12.4.2025",
       time: "10:00 AM - 2:00 PM",
       venue: "303",
-      imageUrl: "asset/camer.jpg",
+      imageUrl: [
+        "asset/events/Strategia/RRR-Strategia_1/RRR-Strategia_1-1.png",
+        "asset/events/Strategia/RRR-Strategia_1/RRR-Strategia_1-2.png",
+      ],
       organizer: "Sheikha Farveena A",
       registrationUrl: "",
       clusterName: "Strategia present",
     ),//waiting reglink, image ✅
 
     Event(
-      title: "Brain Snap Challenge",
-      description: " Round 1 - Picture Quest  \n Round 2 -  Mind maze \n Round 3 - Momentary memory ",
+      title: "Code Master",
+      description: " Round 1 - Easy \n Round 2 - Medium \n Round 3 - Hard",
       date: "Day 2",
       actualDate: "12.4.2025",
-      time: "9:30 AM - 1:30 PM",
-      venue: "310",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Atchaya S",
+      time: "10:00 AM - 1:00 PM",
+      venue: "Lab 1",
+      imageUrl: ["asset/events/Informatica/Event2/CODEMASTER-Informatica_2.png",],
+      organizer: "Shobia R",
       registrationUrl: "",
-      clusterName: "Strategia present",
-    ),//waiting reglink, image ✅
-
-    Event(
-      title: "Tri Game Showdown",
-      description: " Round 1 - Spot the price  \n Round 2 - Break the rope \n Round 3 - Guess the tagline ",
-      date: "Day 1",
-      actualDate: "11.4.2025",
-      time: "9:30 AM - 1:30 PM",
-      venue: "303",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Theetchana S",
-      registrationUrl: "",
-      clusterName: "Strategia present",
-    ),//waiting reglink, image ✅
-
-
-    //Optica
-    Event(
-      title: "Illuminati ",
-      description: " Round 1 - Blerg Bits  \n Round 2 - Wacky Wizzle \n Round 3 - Aurora Ascent",
-      date: "Day 1",
-      actualDate: "11.4.2025",
-      time: "11:00 AM - 1:00 PM",
-      venue: "509",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Akshaya A",
-      registrationUrl: "",
-      clusterName: "Optica present",
-    ),//waiting reglink, image  ✅
+      clusterName: "Informatica present",
+    ),//waiting reglink,image ✅
 
     Event(
       title: "Apt APt",
@@ -257,121 +375,14 @@ class _EventScreenState extends State<EventScreen> {
       actualDate: "12.4.2025",
       time: "10:00 AM - 12:00 PM",
       venue: "510",
-      imageUrl: "asset/camer.jpg",
+      imageUrl: [
+        "asset/events/Optica/Event2/AptApt-Optica_2.png",
+        "asset/events/Optica/Event2/AptApt-Optica_2(1).png",
+      ],
       organizer: "Porkodi P G",
       registrationUrl: "",
       clusterName: "Optica present",
     ),//waiting reglink, image  ✅
-
-    Event(
-      title: "Eureka Odyssey",
-      description: " Round 1 - Circle rush\n Round 2 - Pixel Panic\n Round 3 - Speed Rush",
-      date: "Day 3",
-      actualDate: "13.4.2025",
-      time: "10:00 AM - 12:00 PM",
-      venue: "509",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Gokula Krishnan V",
-      registrationUrl: "",
-      clusterName: "Optica present",
-    ),//waiting reglink, image ✅
-
-
-    //Vinodha Vahini
-    Event(
-      title: " Pattukondi chooddam [Treasure Hunt]",
-      description: " Round 1 -   \n Round 2 - \n Round 3 -  ",
-      date: "Day 1",
-      actualDate: "11.4.2025",
-      time: "2:00 PM - 3:30 PM",
-      venue: "316",
-      imageUrl: "asset/camer.jpg",
-      organizer: " A.Yaswanth \nS.Vedasri",
-      registrationUrl: "",
-      clusterName: "inodha Vahini present",
-    ),//waiting reglink, image, des ✅
-
-    //Robotics
-
-
-    //Sportiva
-    Event(
-      title: "Lucky Box",
-      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
-      date: "Day 1",
-      actualDate: "11.4.2025",
-      time: "11:00 AM - 2:30 PM",
-      venue: "Near basketball court",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Yamini M\nYazhini B\nNithiyasri",
-      registrationUrl: "",
-      clusterName: "Sportiva present",
-    ),//waiting reglink, image, des ✅
-
-    Event(
-      title: "Uriyadi",
-      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
-      date: "Day 1",
-      actualDate: "11.4.2025",
-      time: "11:30 AM - 2:30 PM",
-      venue: "Near basketball court",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Yuvaraj A\nSrinivas C\nManisai A",
-      registrationUrl: "",
-      clusterName: "Sportiva present",
-    ),//waiting reglink, image, des ✅
-
-    Event(
-      title: "One Hour Cricket",
-      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
-      date: "Day 1",
-      actualDate: "11.4.2025",
-      time: "12:00 PM - 3:30 PM",
-      venue: "Cricket Ground ",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Aswin G\nPrasanth M\nManisai A\nKeerthivas I",
-      registrationUrl: "",
-      clusterName: "Sportiva present",
-    ),//waiting reglink, image, des ✅
-
-    Event(
-      title: "Shape Cut",
-      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
-      date: "Day 1",
-      actualDate: "11.4.2025",
-      time: "12:00 PM - 2:30 PM",
-      venue: "Stall",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Pavithra K\nJananisri U\nAarthi H",
-      registrationUrl: "",
-      clusterName: "Sportiva present",
-    ),//waiting reglink, image, des ✅
-
-    Event(
-      title: "Match the Bottle",
-      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
-      date: "Day 1",
-      actualDate: "11.4.2025",
-      time: "12:00 PM - 2:30 PM",
-      venue: "Stall",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Kavya B\nVijaya kamachi A\nSujitha  A",
-      registrationUrl: "",
-      clusterName: "Sportiva present",
-    ),//waiting reglink, image, des ✅
-
-    Event(
-      title: "Dodge Ball",
-      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
-      date: "Day 1",
-      actualDate: "11.4.2025",
-      time: "12:00 PM - 2:30 PM",
-      venue: "Stall",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Monisha Kamala S\nGovindaraj A\nThirumal eswar A\nSriram S",
-      registrationUrl: "",
-      clusterName: "Sportiva present",
-    ),//waiting reglink, image, des ✅
 
     Event(
       title: "Power Lift",
@@ -380,7 +391,7 @@ class _EventScreenState extends State<EventScreen> {
       actualDate: "12.4.2025",
       time: "10:30 AM - 12:30 PM",
       venue: "Stall",
-      imageUrl: "asset/camer.jpg",
+      imageUrl: ["asset/events/Sportiva/event2/PowerLifting-Sportiva_D2.png",],
       organizer: "Yuvaraj A\nGovindaraj A\nSriram S",
       registrationUrl: "",
       clusterName: "Sportiva present",
@@ -393,7 +404,7 @@ class _EventScreenState extends State<EventScreen> {
       actualDate: "12.4.2025",
       time: "10:30 AM - 12:30 PM",
       venue: "Football court",
-      imageUrl: "asset/camer.jpg",
+      imageUrl: ["asset/events/Sportiva/event2/Football-Sportiva_D2.png",],
       organizer: "Aswin G\nPrasanth M\nManisai A",
       registrationUrl: "",
       clusterName: "Sportiva present",
@@ -406,10 +417,117 @@ class _EventScreenState extends State<EventScreen> {
       actualDate: "12.4.2025",
       time: "11:30 AM - 2:30 PM",
       venue: "Kabadi court",
-      imageUrl: "asset/camer.jpg",
+      imageUrl: ["asset/events/Sportiva/event2/Thugofwar-Sportiva_D2.png",],
       organizer: "Srinivas C\nKeerthivas I\nSujitha A\nMonisha kamala S",
       registrationUrl: "",
       clusterName: "Sportiva present",
+    ),//waiting reglink, image, des ✅
+
+    Event(
+      title: "Tech Talent",
+      description: " Round 1 - Easy  \n Round 2 - Medium \n Round 3 - Hard ",
+      date: "Day 2",
+      actualDate: "12.4.2025",
+      time: "2:00 PM - 4:00 PM",
+      venue: "Lab 1",
+      imageUrl: ["asset/events/Informatica/Event3/TECHTALENT-Informatica_3.png",],
+      organizer: "RajaSri S",
+      registrationUrl: "",
+      clusterName: "Informatica present",
+    ),//waiting reglink  ✅
+
+    Event(
+      title: "Balloon blasters",
+      description: " Round 1 -  \n Round 2 -  \n Round 3 - ",
+      date: "Day 1",
+      actualDate: "11.4.2025",
+      time: "2:00 PM - 3:00 PM",
+      venue: "Basketball court",
+      imageUrl: [
+        "asset/events/Robotics/BallonBlaster-Robotics_2/BallonBlaster-Robotics_2-1.png",
+        "asset/events/Robotics/BallonBlaster-Robotics_2/BallonBlaster-Robotics_2-2.png",
+          ],
+      organizer: "K.Nirmal\nK.Revanth",
+      registrationUrl: "",
+      clusterName: "Robotics present",
+    ), //waiting reglink ✅
+
+    Event(
+      title: "Wit Wizard War",
+      description: " Round 1 - Handy cortex \n Round 2 - Witty word play \n Round 3 - Mime and Maze",
+      date: "Day 2",
+      actualDate: "12.4.2025",
+      time: "2:00 PM - 5:00 PM",
+      venue: "T&P Hall",
+      imageUrl: [
+        "asset/events/Biogenesis/Witwizardwar-Biogenesis_3/Witwizardwar-Biogenesis_3-1.png",
+        "asset/events/Biogenesis/Witwizardwar-Biogenesis_3/Witwizardwar-Biogenesis_3-2.png",
+      ],
+      organizer: "Sowmiya R",
+      registrationUrl: "",
+      clusterName: "Biogenesis present",
+    ),//waiting reglink  ✅
+
+    Event(
+      title: "Pattimandram",
+      description: " Round 1 - Handy cortex \n Round 2 - Witty word play \n Round 3 - Mime and Maze",
+      date: "Day 2",
+      actualDate: "12.4.2025",
+      time: "2:30 PM - 5:30 PM",
+      venue: "Auditorium",
+      imageUrl: [
+        "asset/events/Equilibria/Pattimandram-Equlibria-1.png",
+          ],
+      organizer: "Sowmiya R",
+      registrationUrl: "",
+      clusterName: "Equillibria present",
+    ),//waiting reglink, image   ✅
+
+    //Day 3
+
+    Event(
+      title: "The Great Treasure Hunt",
+      description: " Round 1 -  \n Round 2 -  \n Round 3 - ",
+      date: "Day 3",
+      actualDate: "13.4.2025",
+      time: "9:30 AM - 12:30 PM",
+      venue: "402",
+      imageUrl: [
+        "asset/events/Electronica/GreatTreasureHunt-Electronica_3/GreatTreasureHunt-Electronica_3-1.png",
+        "asset/events/Electronica/GreatTreasureHunt-Electronica_3/GreatTreasureHunt-Electronica_3-2.png",
+      ],
+      organizer: "K.Nirmal\nK.Revanth",
+      registrationUrl: "",
+      clusterName: "Electronica present",
+    ), //waiting time, reglink, image  ✅
+
+    Event(
+      title: "Robo race",
+      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
+      date: "Day 3",
+      actualDate: "13.4.2025",
+      time: "10:00 AM - 11:00 PM",
+      venue: "Basketball court",
+      imageUrl: [
+        "asset/events/Robotics/RoboRace-Robotics_3/RoboRace-Robotics_3-1.png",
+        "asset/events/Robotics/RoboRace-Robotics_3/RoboRace-Robotics_3-2.png",
+      ],
+      organizer: "Kaviya B\nYamini M\nAarthi H",
+      registrationUrl: "",
+      clusterName: "Robotics present",
+    ),//waiting reglink, image, des ✅
+
+    Event(
+      title: "Double Trouble",
+      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
+      date: "Day 3",
+      actualDate: "13.4.2025",
+      time: "10:00 AM - 12:00 PM",
+      venue: "512",
+      imageUrl: ["asset/events/Sportiva/event2/PowerLifting-Sportiva_D2.png",],
+      organizer: "Kaviya B\nYamini M\nAarthi H",
+      registrationUrl: "",
+      clusterName: "Optica present",
     ),//waiting reglink, image, des ✅
 
     Event(
@@ -419,37 +537,84 @@ class _EventScreenState extends State<EventScreen> {
       actualDate: "12.4.2025",
       time: "10:30 AM - 12:30 PM",
       venue: "Stall",
-      imageUrl: "asset/camer.jpg",
+      imageUrl: ["asset/events/Sportiva/event2/PowerLifting-Sportiva_D2.png",],
       organizer: "Kaviya B\nYamini M\nAarthi H",
       registrationUrl: "",
       clusterName: "Sportiva present",
     ),//waiting reglink, image, des ✅
 
-    Event(
-      title: "Reach the Ball",
-      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
-      date: "Day 2",
-      actualDate: "12.4.2025",
-      time: "10:30 AM - 12:30 PM",
-      venue: "Stall",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Yazhini B\nPavithra K\nNithiya sri I",
-      registrationUrl: "",
-      clusterName: "Sportiva present",
-    ),//waiting reglink, image, des ✅
+    //access india
+
+
+
+    //Biogenesis
+
+
+
+
+
+    //electronica
+
+
+
+
+
+    //Informatica
+
+
+
+
+
+
+    //Mathematica
+
+
+
+
+
+
+    //Strategia
+
 
     Event(
-      title: "Strike the Balloon",
-      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
+      title: "Brain Snap Challenge",
+      description: " Round 1 - Picture Quest  \n Round 2 -  Mind maze \n Round 3 - Momentary memory ",
       date: "Day 2",
       actualDate: "12.4.2025",
-      time: "10:30 AM - 12:30 PM",
-      venue: " Near basketball court",
-      imageUrl: "asset/camer.jpg",
-      organizer: "Jananisri U\nVijayakamachi\nSujitha A",
+      time: "9:30 AM - 1:30 PM",
+      venue: "310",
+      imageUrl: [
+        "asset/events/Strategia/BrainSnap-Strategia_2/BrainSnap-Strategia_2-1.png",
+        "asset/events/Strategia/BrainSnap-Strategia_2/BrainSnap-Strategia_2-2.png",
+      ],
+      organizer: "Atchaya S",
       registrationUrl: "",
-      clusterName: "Sportiva present",
-    ),//waiting reglink, image, des ✅
+      clusterName: "Strategia present",
+    ),//waiting reglink, image ✅
+
+
+
+
+    //Optica
+
+
+
+
+
+
+    //Vinodha Vahini
+
+
+    //Robotics
+
+
+    //Sportiva
+
+
+
+
+
+
 
   ];
 
@@ -501,7 +666,7 @@ class _EventScreenState extends State<EventScreen> {
         title:  Center(
           child: Text(
             "Event Timeline",
-            style: GoogleFonts.montserrat(color: color, fontWeight: FontWeight.bold),
+            style: GoogleFonts.poppins(color: color, fontWeight: FontWeight.bold),
 
           ),
         ),
@@ -530,7 +695,7 @@ class _EventScreenState extends State<EventScreen> {
                         : Colors.white, // Light mode: Highlight color is white
                     child: Text(
                       entry.key, // "Day 1", "Day 2", etc.
-                      style: GoogleFonts.montserrat(
+                      style: GoogleFonts.poppins(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                         //color: color,

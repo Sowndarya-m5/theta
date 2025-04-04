@@ -29,7 +29,7 @@ class ProgressDialog extends StatelessWidget {
               const SizedBox(width: 26.0),
               Text(
                 message!,
-                style: GoogleFonts.montserrat(
+                style: GoogleFonts.poppins(
                   color: Colors.black,
                   fontSize: 12,
                 ),

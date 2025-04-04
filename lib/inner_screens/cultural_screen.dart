@@ -70,7 +70,7 @@ class CulturalInScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: Text(
           "Cultural",
-          style: GoogleFonts.montserrat(
+          style: GoogleFonts.poppins(
             color: color,
             fontSize: 24,
           ),
@@ -130,7 +130,7 @@ class CulturalInScreen extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 5.0),
                       child: Text(
                         cultural[index].name,
-                        style: GoogleFonts.montserrat(fontWeight: FontWeight.bold, fontSize: 19),
+                        style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 19),
                       ),
                     ),
                   ],

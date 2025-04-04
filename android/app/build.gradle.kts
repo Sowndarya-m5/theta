@@ -4,14 +4,14 @@ plugins {
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
     id("com.google.gms.google-services")
-    apply plugin: 'com.google.gms.google-services'
+    //apply plugin: 'com.google.gms.google-services'
 
 
 }
 
 android {
     namespace = "com.example.theta"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 34
     ndkVersion = "27.0.12077973"
         //flutter.ndkVersion
 
@@ -29,10 +29,10 @@ android {
         applicationId = "com.example.theta"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = 19
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        minSdk = 21
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
 
     }
 

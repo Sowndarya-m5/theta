@@ -4,6 +4,7 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:theta/inner_screens/club_screen.dart';
+import 'package:video_player/video_player.dart';
 import '../inner_screens/cluster_screen.dart';
 import '../inner_screens/committee_screen.dart';
 import '../models/cluster_model.dart';
@@ -29,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   //cluster total 9
 
   static List<String> Name = [
-    "Access India",
+    "AccessIndia",
     "Biogenesis",
     "Electronica",
     "Informatica",
@@ -40,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
     "Strategia",
   ];
   static List<String> desc = [
-    "Access India Cluster helps students strengthen their ability to work together, communicate effectively, and think creatively. It creates an environment where students learn to adapt, lead, and solve challenges as a team.",
+    "AccessIndia Cluster helps students strengthen their ability to work together, communicate effectively, and think creatively. It creates an environment where students learn to adapt, lead, and solve challenges as a team.",
     "Biogenesis Cluster explores the fascinating world of life sciences, covering topics like biotechnology, genetics, and molecular biology. It helps students understand the building blocks of life and discover advancements shaping the future of biology.",
     "Electronica Cluster focuses on the world of electronics, guiding students through circuits, microcontrollers, and innovative electronic systems. It explores the latest trends in electronic design and technology.",
     "Informatica is a student-run organization focused on bringing together like-minded individuals interested in computer science and technology. The club aims to provide its members with opportunities to develop their technical skills, participate in coding competitions, network with industry professionals, and learn about emerging trends in the field",
@@ -62,15 +63,15 @@ class _HomeScreenState extends State<HomeScreen> {
     "asset/clusterlogo/Strategia Logo.jpg",
   ];
   static List BoxColor = [
-    Color(0xFFFBDCDA),
-    Color(0xFFD4EEF3),
-    Color(0xFFFAE6D5),
-    Color(0xFFEFCFE7),
-    Color(0xffF7A593),
-    Color(0xffF8A44c),
-    Color(0xffD3B0E0),
-    Color(0xffFDE598),
-    Color(0xFFFBDCDA),
+    Color(0xFF8D6E63), // Earthy Mocha
+    Color(0xFFFFA726), // Warm Orange
+    Color(0xFFAB47BC), // Vibrant Purple
+    Color(0xFF64B5F6), // Light Sky Blue
+    Color(0xFFAED581), // Fresh Green
+    Color(0xFF9575CD), // Muted Purple
+    Color(0xFFFF8A65), // Peach
+    Color(0xFFBCAAA4), // Warm Taupe
+    Color(0xFF81C784), // Leaf Green
   ];
   static List<String> reglink = [
     "https://forms.gle/YzKZTvcNYgYNpPV28",
@@ -133,15 +134,15 @@ class _HomeScreenState extends State<HomeScreen> {
   //commitee total 14
 
   static List<String> Namec2 = [
+    'Infrastructure & Logistics',
+    'Public Relations',
     "Anchoring",
     'Artminds',
     'Creatives',
     'Crowd Control',
     'Finance',
     'Hospitality',
-    'Infrastructure & Logistics',
     'Organising',
-    'Public Relations',
     'Prize distribution',
     'Promotion & Outreach',
     'Scheduling',
@@ -149,14 +150,14 @@ class _HomeScreenState extends State<HomeScreen> {
     'Stall Management',
   ];
   static List<String> descc2 = [
+    "Responsible for welcoming guests, speakers, and participants. They arrange accommodations, food, and transportation when needed.",
+    "The backbone of the event, responsible for overall planning, coordination, and execution. They ensure smooth communication between different committees and handle any major decision-making.",
     "Manages the hosting and anchoring of the event. They prepare scripts, engage the audience, and ensure smooth transitions between different segments.",
     "A creative team that focuses on artistic elements like designing posters, creating digital content, and adding an artistic touch to the event’s branding.",
     "Focuses on designing and decorating the event venue, including stage setup, banners, backdrops, and other creative elements to enhance the event's look and feel.",
     "Ensures smooth movement of the audience, prevents overcrowding, and maintains discipline at the event venue for safety and order.",
     "Manages the budget, expenses, and financial transactions related to the event. They track income, allocate funds, and ensure financial transparency.",
-    "Responsible for welcoming guests, speakers, and participants. They arrange accommodations, food, and transportation when needed.",
     "Takes care of venue setup, seating arrangements, power supply, sound systems, and other necessary logistics to ensure a smooth event flow.",
-    "The backbone of the event, responsible for overall planning, coordination, and execution. They ensure smooth communication between different committees and handle any major decision-making.",
     "Handles external communication, including press releases, media coverage, and interactions with guests and dignitaries. They maintain the event’s public image",
     "Handles the procurement, arrangement, and distribution of prizes, awards, and certificates to winners and participants.",
     "Manages promotional campaigns, including social media marketing, posters, banners, and word-of-mouth publicity to attract participants and audiences",
@@ -165,15 +166,15 @@ class _HomeScreenState extends State<HomeScreen> {
     "Organizes and oversees stalls, including food, merchandise, and activity booths. They manage stall placements, payments, and crowd interactions.",
   ];
   static List urlc2 = [
+    'asset/commitee/Infrastructure.gif',
+    'asset/commitee/PR.gif',
     "asset/commitee/Anchoring.gif",
     'asset/commitee/Artminds.gif',
     'asset/commitee/Creatives.gif',
     'asset/commitee/crowd.gif',
     'asset/commitee/Finance.gif',
     'asset/commitee/Hospitality.gif',
-    'asset/commitee/Infrastructure.gif',
     'asset/commitee/Organizing.gif',
-    'asset/commitee/PR.gif',
     'asset/commitee/Prize distribution.gif',
     'asset/commitee/promotion.gif',
     'asset/commitee/Scheduling.gif',
@@ -181,20 +182,20 @@ class _HomeScreenState extends State<HomeScreen> {
     'asset/commitee/stall.gif',
   ];
   static List BoxColorc2 = [
-    Color(0xFFFBDCDA),
-    Color(0xFFD4EEF3),
-    Color(0xFFFAE6D5),
-    Color(0xFFEFCFE7),
-    Color(0xffF7A593),
-    Color(0xffF8A44c),
-    Color(0xffD3B0E0),
-    Color(0xffFDE598),
-    Color(0xFFFBDCDA),
-    Color(0xFFD4EEF3),
-    Color(0xFFFAE6D5),
-    Color(0xFFEFCFE7),
-    Color(0xffF7A593),
-    Color(0xFFFBDCDA),
+    Color(0xffD3B0E0), // Soft Purple
+    Color(0xffFDE598), // Light Yellow
+    Color(0xFF80CBC4), // Teal
+    Color(0xFFB0BEC5), // Cool Grey
+    Color(0xFFFFCC80), // Soft Orange
+    Color(0xFFFFAB91), // Light Coral
+    Color(0xFFCF93D9), // Lilac
+    Color(0xFFA5D6A7), // Light Green
+    Color(0xFFE6EE9C), // Pale Lime
+    Color(0xFF90CAF9), // Sky Blue
+    Color(0xFFB39DDB), // Muted Purple
+    Color(0xFFFFF59D), // Soft Yellow
+    Color(0xFFEF9A9A), // Pastel Red
+    Color(0xFFCE93D8), // Light Violet
   ];
   static List<String> reglink2 = [
     "https://forms.gle/YzKZTvcNYgYNpPV28",
@@ -213,13 +214,14 @@ class _HomeScreenState extends State<HomeScreen> {
     "https://forms.gle/YzKZTvcNYgYNpPV28",
   ];
   static List<List<String>> HeadNamesc2 = [
+    ["Thenubhuvaneshwaran V", "Pravin M", "Vishwa Varma B", "Nithish"],
+    ["Abineshwaran P"],
     [" Vedasri S", "Karthick C"],
     ["Tharunya V R", "Vishnupriya S", "Yoganandhini R R"],
     ["Viveca B", "Madhumitha R", "Sakthikumar S", "Harinisri J"],
     ["Manikandan D", "Vijay Sankaran K", "Keerthivasan K"],
     ["Mirudhula K", "Swetha S", "Surya R", "Arulkumaran S"],
     ["Keerthanaa E", "Harini S"],
-    ["Thenubhuvaneshwaran V", "Pravin M", "Vishwa Varma B", "Nithish"],
     [
       "Vignesh M",
       "Hemachandran G",
@@ -230,8 +232,7 @@ class _HomeScreenState extends State<HomeScreen> {
       "Shanofar Marlia S",
       "Atshayanathan K",
       "Divya Prabha R",
-    ], // Multiple heads for Anchoring
-    ["Abineshwaran P"],
+    ],
     ["Dharshini K"],
     ["Yogesh M", " Sahul Hameed R"],
     ["Sivakarthikkaa S", "Theyjeswini K S", "Shruthi B M"],
@@ -239,13 +240,14 @@ class _HomeScreenState extends State<HomeScreen> {
     ["Hari Prasanna S", "Hariharan M"],
   ];
   static List<List<String>> HeadClassc2 = [
+    ["III - B.Com A", "III - BBA", "III - B.Com A", "II - B.Com D"],
+    ["I - M.Com"],
     ["III - B.Tech CSE A", "I - M.Sc Maths"],
     ["III - B.Com B", "III - BCA A", "III - BCA A"],
     ["IV - B.Tech CSE C", " I - M.Com", " III - B.Com A", "III - B.Tech ECE B"],
     ["III - B.Sc CS B", "III - B.Tech ECE B", "III - B.Sc CS A"],
     ["II - M.Com", "II - M.Com", " I - M.Com", " III - B.Com A"],
     ["III - B.Sc Micro", "II - B.Sc Bio"],
-    ["III - B.Com A", "III - BBA", "III - B.Com A", "II - B.Com D"],
     [
       "IV - B. Tech CSE ",
       "IV - B.Tech CSE",
@@ -257,7 +259,6 @@ class _HomeScreenState extends State<HomeScreen> {
       " III - B.Com D",
       "II - B.Tech ECE",
     ],
-    ["I - M.Com"],
     ["III - B.Sc Micro"],
     ["I - M.Com", "I - M.Com"],
     ["III - B.Sc Micro", "III - B.Tech CSE C", "III - B.Tech CSE C"],
@@ -265,13 +266,14 @@ class _HomeScreenState extends State<HomeScreen> {
     ["II -  BBA", "II -  BBA"],
   ];
   static List<List<String>> HeadContactc2 = [
+    ["8610998626", "9360119005", "8940551404", "9042773384"],
+    ["9361412371"],
     ["7989349078", "9025160046"],
     ["9940068863", "8072546991", "8015453076"],
     ["9092585520", "9150849634", "9344835456", "7826038254"],
     ["6381279757", "8903752570", "8946095982"],
     ["9940481413", "8056615432", "9894474013", "9786499039"],
     ["8220475533", "9514997923"],
-    ["8610998626", "9360119005", "8940551404", "9042773384"],
     [
       "9150292811",
       "8056357169",
@@ -283,14 +285,12 @@ class _HomeScreenState extends State<HomeScreen> {
       "7339216366",
       "9361425189",
     ],
-    ["9361412371"],
     ["8754267536"],
     ["8754350722", "7448400237"],
     ["9677449299", "9952770108", "7010013448"],
     ["8248763981", "9363374605"],
     ["9342813177", "9344934638"],
   ];
-
   final List<CommiteeDataModel> commitee = List.generate(
     Namec2.length,
     (index) => CommiteeDataModel(
@@ -348,22 +348,22 @@ class _HomeScreenState extends State<HomeScreen> {
     "Emulsion",
     "Equilibria",
     "Pixelq",
-    "Vinodha Vaahini",
+    "VinodhaVaahini",
     "Webtek",
   ];
   static List urlc4 = [
-    "asset/club/emulsion.gif",
-    "asset/club/Equilibria.gif",
-    "asset/club/pixelq.gif",
-    "asset/club/v.gif",
-    "asset/club/webtex.gif",
+    "asset/club/EmulsionLogo.png",
+    "asset/club/PothigaiMandramLogo.jpg",
+    "asset/club/pixelQ.png",
+    "asset/club/VinodhaVahiniLogo.jpg",
+    "asset/club/Webtek Logo.png",
   ];
   static List BoxColorc4 = [
-    Color(0xFFFBDCDA),
-    Color(0xFFD4EEF3),
-    Color(0xFFFAE6D5),
-    Color(0xFFEFCFE7),
-    Color(0xffF7A593),
+    Color(0xFFFF7043), // Deep Coral
+    Color(0xFF26A69A), // Vibrant Teal
+    Color(0xFFD4A373), // Warm Sand
+    Color(0xFF6D4C41), // Rich Brown
+    Color(0xFF42A5F5), // Bright Blue
   ];
   static List<String> descc4 = [
     "A club dedicated to photography and filmmaking. It focuses on capturing moments through creative photography, cinematography, and editing. The club organizes workshops, photo walks, short film contests, and exhibitions to enhance visual storytelling skills.",
@@ -414,6 +414,47 @@ class _HomeScreenState extends State<HomeScreen> {
     ),
   );
 
+  late VideoPlayerController _videoController;
+  bool _isVideoReady = false;
+  int _currentPage = 0; // Track current slide
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Initialize Video
+    _videoController = VideoPlayerController.asset('asset/banner/thetavideo1.mp4')
+      ..initialize().then((_) {
+        setState(() {
+          _isVideoReady = true;
+        });
+        _videoController.setLooping(true);
+      });
+  }
+
+  void _onPageChanged(int index) {
+    setState(() {
+      _currentPage = index;
+    });
+
+    if (index == 0) {
+      // Restart video when first slide appears
+      _videoController.seekTo(Duration.zero);
+      _videoController.play();
+    } else {
+      // Pause video on other slides
+      _videoController.pause();
+    }
+  }
+
+  @override
+  void dispose() {
+    _videoController.dispose();
+    super.dispose();
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     double _screenwidth = MediaQuery.of(context).size.width;
@@ -438,26 +479,58 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 SizedBox(height: 10),
-                ImageSlideshow(
+                _isVideoReady
+                    ? ImageSlideshow(
                   width: 400,
                   height: 270,
                   initialPage: 0,
                   indicatorColor: Colors.blue,
                   indicatorBackgroundColor: Colors.grey,
+                  onPageChanged: _onPageChanged,
+                  autoPlayInterval: 10000,
+                  isLoop: true,
                   children: [
-                    Image.asset('asset/banner/images1.jpg', fit: BoxFit.cover),
+                    // Video Slide
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        AspectRatio(
+                          aspectRatio: _videoController.value.aspectRatio,
+                          child: VideoPlayer(_videoController),
+                        ),
+                        Positioned(
+                          bottom: 10,
+                          right: 10,
+                          child: IconButton(
+                            icon: Icon(
+                              _videoController.value.isPlaying
+                                  ? Icons.pause
+                                  : Icons.play_arrow,
+                              color: color,
+                              size: 30,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                if (_videoController.value.isPlaying) {
+                                  _videoController.pause();
+                                } else {
+                                  _videoController.play();
+                                }
+                              });
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                    // Image Slides
                     Image.asset('asset/banner/images2.jpg', fit: BoxFit.cover),
                     Image.asset('asset/banner/images5.jpg', fit: BoxFit.cover),
                     Image.asset('asset/banner/images6.jpg', fit: BoxFit.cover),
                     Image.asset('asset/banner/images7.jpg', fit: BoxFit.cover),
                     Image.asset('asset/banner/images8.jpg', fit: BoxFit.cover),
                   ],
-                  onPageChanged: (value) {
-                    print('Page changed: $value');
-                  },
-                  autoPlayInterval: 3000,
-                  isLoop: true,
-                ),
+                )
+                    : CircularProgressIndicator(),
 
                 SizedBox(height: 10),
 
@@ -476,8 +549,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             : Colors.white, // Light mode: Highlight color is white
                         child:
                         Text(
-                          "Upcoming Events",
-                          style: GoogleFonts.montserrat(
+                          "Upcoming Event",
+                          style: GoogleFonts.poppins(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
                           ),
@@ -547,7 +620,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 : Colors.white, // Light mode: Highlight color is white
                             child: Text(
                               "Cluster",
-                              style: GoogleFonts.montserrat(
+                              style: GoogleFonts.poppins(
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
 
@@ -566,7 +639,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         },
                         child: Text(
                           "See All",
-                          style: GoogleFonts.lora(
+                          style: GoogleFonts.poppins(
                             color: Colors.blue,
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
@@ -601,7 +674,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 width: 150,
                                 margin: EdgeInsets.only(left: 15),
                                 decoration: BoxDecoration(
-                                  color: BoxColorc2[index],
+                                  color: BoxColor[index],
                                   borderRadius: BorderRadius.circular(10),
                                   boxShadow: [
                                     BoxShadow(
@@ -632,7 +705,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     Text(
                                       Cluster[index].name,
-                                      style: GoogleFonts.montserrat(
+                                      style: GoogleFonts.poppins(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 19,
                                       ),
@@ -666,7 +739,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 : Colors.white, // Light mode: Highlight color is white
                             child: Text(
                               "Committee",
-                              style: GoogleFonts.montserrat(
+                              style: GoogleFonts.poppins(
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -684,7 +757,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         },
                         child: Text(
                           "See All",
-                          style: GoogleFonts.lora(
+                          style: GoogleFonts.poppins(
                             color: Colors.blue,
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
@@ -749,7 +822,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Text(
                                       commitee[index].name,
                                       textAlign: TextAlign.center,
-                                      style: GoogleFonts.montserrat(
+                                      style: GoogleFonts.poppins(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 19,
                                       ),
@@ -900,7 +973,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 : Colors.white, // Light mode: Highlight color is white
                             child: Text(
                               "Club",
-                              style: GoogleFonts.montserrat(
+                              style: GoogleFonts.poppins(
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -918,7 +991,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         },
                         child: Text(
                           "See All",
-                          style: GoogleFonts.lora(
+                          style: GoogleFonts.poppins(
                             color: Colors.blue,
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
@@ -953,7 +1026,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 width: 150,
                                 margin: EdgeInsets.only(left: 15),
                                 decoration: BoxDecoration(
-                                  color: BoxColorc2[index],
+                                  color: BoxColorc4[index],
                                   borderRadius: BorderRadius.circular(10),
                                   boxShadow: [
                                     BoxShadow(
@@ -975,14 +1048,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    Image.asset(
-                                      club[index].ImageUrl,
-                                      height: 120,
-                                      width: 120,
+                                    ClipOval(
+                                      child: Image.asset(
+                                        club[index].ImageUrl,
+                                        height: 120,
+                                        width: 120,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                     Text(
                                       club[index].name,
-                                      style: GoogleFonts.montserrat(
+                                      textAlign: TextAlign.center,
+                                      style: GoogleFonts.poppins(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 19,
                                       ),

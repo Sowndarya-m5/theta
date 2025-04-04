@@ -119,7 +119,7 @@ class _culturalDetailsState extends State<CulturalDetails> {
                         child: Text(
                           widget.culturalDataModel.name,
                           textAlign: TextAlign.start,
-                          style: GoogleFonts.montserrat(
+                          style: GoogleFonts.poppins(
                             color: color,
                             fontWeight: FontWeight.bold,
                             fontSize: 35,
@@ -172,7 +172,7 @@ class _culturalDetailsState extends State<CulturalDetails> {
                 children: [
                   Text(
                     'Description',
-                    style: GoogleFonts.montserrat(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
@@ -181,7 +181,7 @@ class _culturalDetailsState extends State<CulturalDetails> {
                   SizedBox(height: 18),
                   Text(
                     widget.culturalDataModel.desc,
-                    style: GoogleFonts.lora(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
@@ -200,7 +200,7 @@ class _culturalDetailsState extends State<CulturalDetails> {
                     initiallyExpanded: false,
                     title: Text(
                       'Committee Heads',
-                      style: GoogleFonts.montserrat(
+                      style: GoogleFonts.poppins(
                         color: color,
                         fontWeight: FontWeight.bold,
                         fontSize: 28,
@@ -215,7 +215,7 @@ class _culturalDetailsState extends State<CulturalDetails> {
                             return Center(
                               child: Text(
                                 "No data available",
-                                style: GoogleFonts.lora(fontSize: 18, color: color),
+                                style: GoogleFonts.poppins(fontSize: 18, color: color),
                               ),
                             );
                           }
@@ -249,7 +249,7 @@ class _culturalDetailsState extends State<CulturalDetails> {
                                       SizedBox(height: 10),
                                       Text(
                                         HeadNamesc3[index][i],
-                                        style: GoogleFonts.montserrat(
+                                        style: GoogleFonts.poppins(
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.black,
@@ -258,7 +258,7 @@ class _culturalDetailsState extends State<CulturalDetails> {
                                       ),
                                       Text(
                                         HeadClassc3[index][i],
-                                        style: GoogleFonts.lora(fontSize: 18, color: Colors.grey[700]),
+                                        style: GoogleFonts.poppins(fontSize: 18, color: Colors.grey[700]),
                                         textAlign: TextAlign.center,
                                       ),
                                       SizedBox(height: 8),
@@ -267,7 +267,7 @@ class _culturalDetailsState extends State<CulturalDetails> {
                                         children: [
                                           Text(
                                             HeadContactc3[index][i],
-                                            style: GoogleFonts.lora(fontSize: 18, color: Colors.black87),
+                                            style: GoogleFonts.poppins(fontSize: 18, color: Colors.black87),
                                           ),
                                           SizedBox(width: 8),
                                           GestureDetector(
@@ -278,7 +278,7 @@ class _culturalDetailsState extends State<CulturalDetails> {
                                               ScaffoldMessenger.of(context).showSnackBar(
                                                 SnackBar(
                                                   content: Text("Phone number copied!",
-                                                    style: GoogleFonts.lora(fontSize: 18, color: Colors.black87),
+                                                    style: GoogleFonts.poppins(fontSize: 18, color: Colors.black87),
                                                   ),
                                                   duration: Duration(seconds: 1),
                                                 ),
@@ -310,7 +310,7 @@ class _culturalDetailsState extends State<CulturalDetails> {
                   child: isRegistrationClosed
                       ? Text(
                     "❌ Registration Closed!",
-                    style: GoogleFonts.montserrat(
+                    style: GoogleFonts.poppins(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.red,
@@ -336,11 +336,11 @@ class _culturalDetailsState extends State<CulturalDetails> {
                       children: [
                         Text(
                           "Register Now",
-                          style: GoogleFonts.lora(fontSize: 18, color: Colors.white),
+                          style: GoogleFonts.poppins(fontSize: 18, color: Colors.white),
                         ),
                         Text(
                           "(Closes at: $formattedDeadline)",
-                          style: GoogleFonts.lora(fontSize: 14, color: Colors.white70),
+                          style: GoogleFonts.poppins(fontSize: 14, color: Colors.white70),
                         ),
                       ],
                     ),

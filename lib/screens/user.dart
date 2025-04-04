@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:animate_do/animate_do.dart';
@@ -77,72 +78,49 @@ class UserScreen extends StatefulWidget {
 }
 
 class _UserScreenState extends State<UserScreen> {
-  List<Color> glowColors = [
-    Colors.redAccent,
-    Colors.blueAccent,
-    Colors.greenAccent,
-    Colors.purpleAccent,
-    Colors.orangeAccent,
-    Colors.cyanAccent,
-  ];
-  int _glowIndex = 0;
-
-  void _startGlowAnimation() {
-    Timer.periodic(Duration(seconds: 1), (timer) {
-      setState(() {
-        _glowIndex =
-            (_glowIndex + 1) % glowColors.length; // Cycle through colors
-      });
-    });
-  }
-
-  final List<String> imagePaths = [
-
-    'asset/sponsor/CUB.jpg',
-    'asset/sponsor/Cub1.jpg',
-    'asset/sponsor/Cub1.png',
-
-    'asset/sponsor/FrozenBottleLogo.jpeg',
-    'asset/sponsor/FrozenBottleLogo.png',
-
-    'asset/sponsor/LeeBenzLogo.png',
-    'asset/sponsor/LeeBenzLogo1.png',
-    'asset/sponsor/LeeBenzLogo.png',
-    'asset/sponsor/LeeBenzLogo1.png',
 
 
-    'asset/sponsor/MRSLogo.jpg',
-    'asset/sponsor/MRSLogo.jpg',
+  final Map<String, List<Map<String, String>>> socialAccounts = {
+    "YouTube": [
+      {"name": "Theta SRC", "url": "https://youtube.com/@thetasrc"},
+      {"name": "Emulsion", "url": "https://youtube.com/@teamemulsion"},
+    ],
+    "Instagram": [
+      {"name": "Theta SRC", "url": "https://www.instagram.com/theta_src"},
+      {"name": "PixelQ", "url": "https://www.instagram.com/pixelq.src"},
+      {"name": "Emulsion", "url": "https://www.instagram.com/team_emulsion"},
+    ],
+    "LinkedIn": [
+      {"name": "Theta", "url": "https://in.linkedin.com/company/theta-src"},
+    ],
+  };
 
-    'asset/sponsor/TempleCityCircleLogo1.png',
-    'asset/sponsor/TempleCitySportsLogo.jpg',
-    "asset/sponsor/TempleCityCircleLogo1.png",
-    'asset/sponsor/TempleCitySportsLogo.png',
+  final Map<String, String> socialImages = {
+    "YouTube": "asset/youtube1.webp",
+    "Instagram": "asset/Instagram.webp",
+    "LinkedIn": "asset/LinkedIn.webp",
+  };
 
-    'asset/sponsor/TripleCLogo.jpg',
-    'asset/sponsor/TripleCLogo.png',
+  final Map<String, List<Color>> buttonColors = {
+    "YouTube": [Colors.redAccent, Colors.white],
+    "Instagram": [Colors.pinkAccent, Colors.orangeAccent],
+    "LinkedIn": [Colors.blueAccent, Colors.white],
+  };
 
 
 
 
 
 
+  final List<String> logoPaths = [
+    'asset/sponsor/cubb.png',
+    'asset/sponsor/TempleCityy.png',
+    'asset/sponsor/MRSs.png',
+    'asset/sponsor/LeeBenzz.png',
+    'asset/sponsor/FrozenBottlee.png',
+    'asset/sponsor/TripleCc.png',
   ];
 
-  ScrollController _scrollController = ScrollController();
-
-  void _startAutoScroll() {
-    Timer.periodic(Duration(milliseconds: 50), (timer) {
-      // Faster scrolling
-      if (_scrollController.hasClients) {
-        _scrollController.animateTo(
-          _scrollController.offset + 3.0,
-          duration: Duration(milliseconds: 50),
-          curve: Curves.easeInOut, // Smooth animation effect
-        );
-      }
-    });
-  }
 
   final TextEditingController _addressTextController = TextEditingController(
     text: "",
@@ -168,9 +146,8 @@ class _UserScreenState extends State<UserScreen> {
     super.initState();
     loadUserData();
     _notificationService.initNotifications();
-    _startGlowAnimation();
     fetchAndScheduleEvents();
-    _startAutoScroll();
+    //_startAutoScroll();
   }
 
   void loadUserData() async {
@@ -252,18 +229,31 @@ class _UserScreenState extends State<UserScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const SizedBox(height: 10),
+                      Center(
+                        child: Image.asset(
+                          'asset/SASTRA.png', // Replace with your actual image path
+                          width: 450, // Adjust width as needed
+                          height: 100, // Adjust height as needed
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      const Divider(thickness: 2),
+                      const SizedBox(height: 10),
                       Text(
                         "$name",
                         style: GoogleFonts.poppins(
                           color: color,
-                          fontSize: 27,
+                          fontSize: 24,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       const SizedBox(height: 10),
                       Text(
                         '$email',
-                        style: GoogleFonts.poppins(color: color, fontSize: 22),
+                        style: GoogleFonts.poppins(color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white70
+                            : Colors.black54, fontSize: 20),
                       ),
                       const SizedBox(height: 10),
                       const Divider(thickness: 2),
@@ -271,10 +261,10 @@ class _UserScreenState extends State<UserScreen> {
 
                       // Notifications Toggle
                       SwitchListTile(
-                        title: Text('Notifications',style: GoogleFonts.poppins(fontSize: 22, color: color),),
+                        title: Text('Notifications',style: GoogleFonts.poppins(fontSize: 18, color: color),),
                         subtitle: Text(
                           _notificationsEnabled ? "ON" : "OFF",
-                          style: GoogleFonts.poppins(color: color),
+                          style: GoogleFonts.poppins(color: color,fontSize: 16,),
                         ),
                         secondary: Icon(IconlyLight.notification, color: color),
                         onChanged: (bool value) {
@@ -290,7 +280,7 @@ class _UserScreenState extends State<UserScreen> {
 
                       //Theme
                       SwitchListTile(
-                        title: Text("Theme",style: GoogleFonts.poppins(color: color, fontSize: 22),),
+                        title: Text("Theme",style: GoogleFonts.poppins(color: color, fontSize: 18),),
 
                         secondary: Icon(
                           themeState.getDarkTheme
@@ -315,6 +305,67 @@ class _UserScreenState extends State<UserScreen> {
                         color: color,
                       ),
 
+
+                      SizedBox(height: 30),
+
+                      //sponsors
+                      Center(
+                        child: Text(
+                          "Our Reputed Sponsors",
+                          style: GoogleFonts.poppins(
+                            color: color,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 40),
+                      Center(
+                        child: Wrap(
+                          alignment: WrapAlignment.center,
+                          spacing: 20,
+                          runSpacing: 20,
+                          children: List.generate(logoPaths.length, (index) {
+                            return AnimatedGlowingLogo(imagePath: logoPaths[index]);
+                          }),
+                        ),
+                      ),
+                      SizedBox(height: 50), // Reduce from 20 to 10
+                      Center(
+                        child: Text(
+                          "Connect With Us!",
+                          style: GoogleFonts.poppins(
+                            color: color,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ), // Reduce from 20 to 10
+                      GridView.count(
+                        crossAxisCount: 3,
+                        shrinkWrap: true,
+                        padding: EdgeInsets.all(5),
+                        children: socialAccounts.keys.map((platform) {
+                          return GestureDetector(
+                            onTap: () => _showAccounts(context, platform),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  socialImages[platform]!,
+                                  height: 36,
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  platform,
+                                  style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold,color: color),
+                                ),
+                              ],
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                      SizedBox(height: 20),
                       //log out
                       _listTiles(
                         title: 'Logout',
@@ -322,61 +373,8 @@ class _UserScreenState extends State<UserScreen> {
                         onPressed: () {
                           _showLogoutDialog();
                         },
-                        color: color,
+                        color: Colors.red,
 
-                      ),
-                      SizedBox(height: 30),
-
-                      //sponsors
-                      Text(
-                        "Our Reputed Sponsors",
-                        style: GoogleFonts.poppins(
-                          color: color,
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                      Center(
-                        child: SizedBox(
-                          height: 160, // Increased height
-                          child: ListView.builder(
-                            controller: _scrollController,
-                            scrollDirection: Axis.horizontal,
-                            itemCount: imagePaths.length * 1000,
-                            itemBuilder: (context, index) {
-                              return AnimatedContainer(
-                                duration: Duration(seconds: 1),
-                                margin: EdgeInsets.symmetric(horizontal: 14.0), // Adjusted spacing
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: glowColors[_glowIndex],
-                                    width: 7, // Slightly thicker border
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: glowColors[_glowIndex].withOpacity(0.7),
-                                      blurRadius: 14, // More glow effect
-                                      spreadRadius: 5,
-                                    ),
-                                  ],
-                                ),
-                                child: ClipOval(
-                                  child: SizedBox(
-                                    width: 140, // Increased circle size
-                                    height: 140,
-                                    child: Image.asset(
-                                      imagePaths[index % imagePaths.length],
-                                      fit: BoxFit.fill, // Prevents stretching
-                                      filterQuality: FilterQuality.high, // Improves image clarity
-                                    ),
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                        ),
                       ),
 
                     ],
@@ -536,14 +534,86 @@ class _UserScreenState extends State<UserScreen> {
                     ),
                     child: ClipOval(
                       child: Image.asset(
-                        'asset/theta.jpg',
-                        fit: BoxFit.cover,
+                        'asset/sownddd.png',
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
                 ),
               ),
             ],
+          ),
+        );
+      },
+    );
+  }
+
+  void _showAccounts(BuildContext context, String platform) {
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) {
+        return Center(
+          child: TweenAnimationBuilder(
+            duration: Duration(milliseconds: 400),
+            curve: Curves.easeOutBack,
+            tween: Tween<double>(begin: 0.6, end: 1.0),
+            builder: (context, double scale, child) {
+              return Transform.scale(
+                scale: scale,
+                child: AlertDialog(
+                  backgroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                  title: Text(
+                    "$platform",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.bold),
+                  ),
+                  content: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: socialAccounts[platform]!.map((account) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: InkWell(
+                          onTap: () => _launchURL(account['url']!),
+                          borderRadius: BorderRadius.circular(15),
+                          child: Container(
+                            width: 220,
+                            height: 55,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: buttonColors[platform]!,
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+                              borderRadius: BorderRadius.circular(15),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  blurRadius: 8,
+                                  spreadRadius: 2,
+                                  offset: Offset(2, 4),
+                                ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Text(
+                                account['name']!,
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+              );
+            },
           ),
         );
       },
@@ -558,12 +628,76 @@ class _UserScreenState extends State<UserScreen> {
     required Color color,
   }) {
     return ListTile(
-      title:TextWidget(text: title, color: color, textSize: 22,   ),
+      title:TextWidget(text: title, color: color, textSize: 18,   ),
       leading: Icon(icon, color: color),
       trailing: Icon(IconlyLight.arrowRight2, color: color),
       onTap: () {
         onPressed();
       },
+    );
+  }
+}
+
+
+class AnimatedGlowingLogo extends StatefulWidget {
+  final String imagePath;
+
+  const AnimatedGlowingLogo({required this.imagePath});
+
+  @override
+  _AnimatedGlowingLogoState createState() => _AnimatedGlowingLogoState();
+}
+
+class _AnimatedGlowingLogoState extends State<AnimatedGlowingLogo> {
+  Color glowColor = Colors.white;
+  Random random = Random();
+
+  @override
+  void initState() {
+    super.initState();
+    _changeGlowColor();
+  }
+
+  void _changeGlowColor() {
+    Timer.periodic(Duration(seconds: 2), (timer) {
+      setState(() {
+        List<Color> colors = [
+          Colors.blueGrey,
+          Colors.deepPurpleAccent,
+          Colors.amberAccent,
+          Colors.lightBlueAccent,
+          Colors.deepOrangeAccent,
+          Colors.indigoAccent,
+          Colors.limeAccent,
+          Colors.pinkAccent,
+          Colors.tealAccent,
+          Colors.cyanAccent,
+        ];
+        glowColor = colors[random.nextInt(colors.length)];
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedContainer(
+      duration: Duration(seconds: 1),
+      width: 90,
+      height: 90,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: glowColor.withOpacity(0.8),
+            blurRadius: 20,
+            spreadRadius: 10,
+          ),
+        ],
+      ),
+      child: CircleAvatar(
+        backgroundColor: Colors.white,
+        backgroundImage: AssetImage(widget.imagePath),
+      ),
     );
   }
 }

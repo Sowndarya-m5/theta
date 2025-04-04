@@ -3,10 +3,18 @@ plugins {
 
     // Add the dependency for the Google services Gradle plugin
     id("com.google.gms.google-services") version "4.4.2" apply false
-    classpath 'com.google.gms:google-services:4.3.10'
+
 
 
 }
+
+buildscript {
+    dependencies {
+        classpath("com.google.gms:google-services:4.3.10")
+    }
+
+}
+
 
 allprojects {
     repositories {

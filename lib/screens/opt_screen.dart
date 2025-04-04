@@ -92,7 +92,7 @@ class _OptDetailsState extends State<OptDetails> {
                         child: Text(
                           widget.optDataModel.name,
                           textAlign: TextAlign.start,
-                          style: GoogleFonts.montserrat(
+                          style: GoogleFonts.poppins(
                             color: color,
                             fontWeight: FontWeight.bold,
                             fontSize: 35,
@@ -117,7 +117,7 @@ class _OptDetailsState extends State<OptDetails> {
                 children: [
                   Text(
                     'Event Coordinator',
-                    style: GoogleFonts.montserrat(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
@@ -126,7 +126,7 @@ class _OptDetailsState extends State<OptDetails> {
                   SizedBox(height: 18),
                   Text(
                     widget.optDataModel.coname,
-                    style: GoogleFonts.montserrat(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
@@ -143,7 +143,7 @@ class _OptDetailsState extends State<OptDetails> {
                 children: [
                   Text(
                     'Description',
-                    style: GoogleFonts.montserrat(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
@@ -152,7 +152,7 @@ class _OptDetailsState extends State<OptDetails> {
                   SizedBox(height: 18),
                   Text(
                     widget.optDataModel.desc,
-                    style: GoogleFonts.lora(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
@@ -169,7 +169,7 @@ class _OptDetailsState extends State<OptDetails> {
                   children: [
                     Text(
                       "Date",
-                      style: GoogleFonts.montserrat(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         color: color,
                         fontWeight: FontWeight.w500,
@@ -178,7 +178,7 @@ class _OptDetailsState extends State<OptDetails> {
                     SizedBox(height: 8),
                     Text(
                       widget.optDataModel.date,
-                      style: GoogleFonts.lora(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: color,
@@ -195,7 +195,7 @@ class _OptDetailsState extends State<OptDetails> {
                   children: [
                     Text(
                       "Time",
-                      style: GoogleFonts.montserrat(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         color: color,
                         fontWeight: FontWeight.w500,
@@ -204,7 +204,7 @@ class _OptDetailsState extends State<OptDetails> {
                     SizedBox(height: 8),
                     Text(
                       widget.optDataModel.time,
-                      style: GoogleFonts.lora(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: color,
@@ -221,7 +221,7 @@ class _OptDetailsState extends State<OptDetails> {
                   children: [
                     Text(
                       "Venue",
-                      style: GoogleFonts.montserrat(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         color: color,
                         fontWeight: FontWeight.w500,
@@ -230,7 +230,7 @@ class _OptDetailsState extends State<OptDetails> {
                     SizedBox(height: 8),
                     Text(
                       widget.optDataModel.venue,
-                      style: GoogleFonts.lora(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: color,
@@ -268,13 +268,13 @@ class _OptDetailsState extends State<OptDetails> {
                         ),
                         child: Text(
                           "Register Now",
-                          style: GoogleFonts.montserrat(fontSize: 18, color: Colors.white),
+                          style: GoogleFonts.poppins(fontSize: 18, color: Colors.white),
                         ),
                       )
                     else
                       Text(
                         "Registration is Closed",
-                        style: GoogleFonts.montserrat(fontSize: 18, color: Colors.red, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(fontSize: 18, color: Colors.red, fontWeight: FontWeight.bold),
                       ),
 
                     if (showClosingTime && now.isBefore(registrationDeadline))
@@ -282,7 +282,7 @@ class _OptDetailsState extends State<OptDetails> {
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(
                           "(Closes at: $formattedDeadline)",
-                          style: GoogleFonts.montserrat(fontSize: 14, color: Colors.red),
+                          style: GoogleFonts.poppins(fontSize: 14, color: Colors.red),
                         ),
                       ),
                   ],

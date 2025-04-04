@@ -15,28 +15,21 @@ class TimelineItem extends StatelessWidget {
     Colors.redAccent,
     Colors.orangeAccent,
     Colors.purpleAccent,
-    Colors.amberAccent,
     Colors.deepOrangeAccent,
     Colors.deepPurpleAccent,
     Colors.indigoAccent,
     Colors.pinkAccent,
-    Colors.yellowAccent,
-    Colors.lightGreenAccent,
     Colors.brown,
-    Colors.grey,
     Colors.blueGrey,
     Colors.indigo,
     Colors.deepPurple,
     Colors.teal,
     Colors.lightGreen,
-    Colors.lime,
-    Colors.amber,
     Colors.orange,
     Colors.deepOrange,
     Colors.red,
     Colors.pink,
     Colors.purple,
-    Colors.blue,
     Colors.green,
   ];
 
@@ -51,31 +44,40 @@ class TimelineItem extends StatelessWidget {
       children: [
         if (isLeft) Expanded(child: Container()), // Space for alternating effect
 
-        GestureDetector(
-          onHorizontalDragEnd: (details) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => EventDetailScreen(event: event)),
-            );
-          },
-          child: Container(
-            width: MediaQuery.of(context).size.width * 0.45,
-            padding: const EdgeInsets.all(12),
-            margin: const EdgeInsets.symmetric(vertical: 8),
-            decoration: BoxDecoration(
-              color: boxColor, // Unique color for each box
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(event.clusterName, style: GoogleFonts.montserrat(color: Colors.white, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 5),
-                Text(event.title, style: GoogleFonts.montserrat(color: Colors.white, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 5),
-                Text(event.time, style: GoogleFonts.montserrat(color: Colors.white70)),
-              ],
-            ),
+        Container(
+          width: MediaQuery.of(context).size.width * 0.45,
+          padding: const EdgeInsets.all(12),
+          margin: const EdgeInsets.symmetric(vertical: 8),
+          decoration: BoxDecoration(
+            color: boxColor, // Unique color for each box
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(child: Text(event.clusterName, style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold))),
+              const SizedBox(height: 5),
+              Center(child: Text(event.title, style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold))),
+              const SizedBox(height: 5),
+              Center(child: Text(event.time, style: GoogleFonts.poppins(color: Colors.white70))),
+              const SizedBox(height: 10),
+
+              // View More Button
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => EventDetailScreen(event: event)),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white, // White button
+                  foregroundColor: boxColor, // Text color same as box
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                ),
+                child: Text("View More", style: GoogleFonts.poppins(fontSize: 17),),
+              ),
+            ],
           ),
         ),
 

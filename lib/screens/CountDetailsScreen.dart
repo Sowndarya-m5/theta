@@ -50,7 +50,7 @@ class _FullDetailsScreenState extends State<FullDetailsScreen> {
 
     return Scaffold(
       appBar: AppBar(title: Text(widget.eventName,
-          style: GoogleFonts.montserrat(
+          style: GoogleFonts.poppins(
           color: color,
           fontWeight: FontWeight.w400,
           fontSize: 20,
@@ -78,7 +78,7 @@ class _FullDetailsScreenState extends State<FullDetailsScreen> {
               // Event Name
               Text(
                 widget.eventName,
-                style: GoogleFonts.montserrat(fontSize: 26, fontWeight: FontWeight.bold, color: color),
+                style: GoogleFonts.poppins(fontSize: 26, fontWeight: FontWeight.bold, color: color),
               ),
               SizedBox(height: 20),
         
@@ -87,7 +87,7 @@ class _FullDetailsScreenState extends State<FullDetailsScreen> {
                 children: [
                   Text(
                     "$days Days",
-                    style: GoogleFonts.montserrat(fontSize: 24, fontWeight: FontWeight.bold,color: color),
+                    style: GoogleFonts.poppins(fontSize: 24, fontWeight: FontWeight.bold,color: color),
                   ),
                   SizedBox(height: 8),
                   FlipClock.reverseCountdown(
@@ -113,11 +113,11 @@ class _FullDetailsScreenState extends State<FullDetailsScreen> {
                           children: [
                             Text(
                               student['name']!,
-                              style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.bold, color:color ),
+                              style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color:color ),
                             ),
                             Text(
                               "Role: ${student['rollNumber']}",
-                              style: GoogleFonts.lora(fontSize: 16, color: Colors.grey),
+                              style: GoogleFonts.poppins(fontSize: 16, color: Colors.grey),
                             ),
                           ],
                         ),

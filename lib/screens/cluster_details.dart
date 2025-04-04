@@ -38,7 +38,7 @@ class _ClusterDetailsState extends State<ClusterDetails> {
   }
 
   static List<String> Name = [
-    "Access India",
+    "AccessIndia",
     "Biogenesis",
     "Electronica",
     "Informatica",
@@ -47,6 +47,17 @@ class _ClusterDetailsState extends State<ClusterDetails> {
     "Robotics",
     "Sportiva",
     "Strategia",
+  ];
+  static List<String> desc = [
+    "AccessIndia Cluster helps students strengthen their ability to work together, communicate effectively, and think creatively. It creates an environment where students learn to adapt, lead, and solve challenges as a team.",
+    "Biogenesis Cluster explores the fascinating world of life sciences, covering topics like biotechnology, genetics, and molecular biology. It helps students understand the building blocks of life and discover advancements shaping the future of biology.",
+    "Electronica Cluster focuses on the world of electronics, guiding students through circuits, microcontrollers, and innovative electronic systems. It explores the latest trends in electronic design and technology.",
+    "Informatica is a student-run organization focused on bringing together like-minded individuals interested in computer science and technology. The club aims to provide its members with opportunities to develop their technical skills, participate in coding competitions, network with industry professionals, and learn about emerging trends in the field",
+    "Mathematica Cluster delves into the world of numbers and patterns, helping students explore mathematical concepts, problem-solving strategies, and logical thinking.",
+    "Optica Cluster, powered by the Physics Department, accelerates your curiosity with momentum! Dive into the dynamics of motion, unravel the mysteries of quantum states, and reflect on the wonders of the universe—because here, every action sparks an equal and opposite reaction!",
+    "Robotica Cluster dives into the field of robotics, offering students insights into robotic design, automation, and real-world applications. It helps students explore the latest advancements in technology and engineering.",
+    "Sportiva Cluster promotes the spirit of sports and fitness, encouraging students to build strength, resilience, and teamwork through various athletic and recreational activities.",
+    "Strategia Cluster, driven by the Commerce Department, sharpens your financial foresight and strategic perception! Master the art of market dynamics, balance the books of uncertainty, and calculate your next move with precision—because in strategy, every decision counts!",
   ];
   static List url = [
     "asset/clusterlogo/A.I.png",
@@ -60,26 +71,15 @@ class _ClusterDetailsState extends State<ClusterDetails> {
     "asset/clusterlogo/Strategia Logo.jpg",
   ];
   static List BoxColor = [
-    Color(0xFFFBDCDA),
-    Color(0xFFD4EEF3),
-    Color(0xFFFAE6D5),
-    Color(0xFFEFCFE7),
-    Color(0xffF7A593),
-    Color(0xffF8A44c),
-    Color(0xffD3B0E0),
-    Color(0xffFDE598),
-    Color(0xFFFBDCDA),
-  ];
-  static List<String> desc = [
-    "Access India Cluster helps students strengthen their ability to work together, communicate effectively, and think creatively. It creates an environment where students learn to adapt, lead, and solve challenges as a team.",
-    "Biogenesis Cluster explores the fascinating world of life sciences, covering topics like biotechnology, genetics, and molecular biology. It helps students understand the building blocks of life and discover advancements shaping the future of biology.",
-    "Electronica Cluster focuses on the world of electronics, guiding students through circuits, microcontrollers, and innovative electronic systems. It explores the latest trends in electronic design and technology.",
-    "Informatica is a student-run organization focused on bringing together like-minded individuals interested in computer science and technology. The club aims to provide its members with opportunities to develop their technical skills, participate in coding competitions, network with industry professionals, and learn about emerging trends in the field",
-    "Mathematica Cluster delves into the world of numbers and patterns, helping students explore mathematical concepts, problem-solving strategies, and logical thinking.",
-    "Optica Cluster, powered by the Physics Department, accelerates your curiosity with momentum! Dive into the dynamics of motion, unravel the mysteries of quantum states, and reflect on the wonders of the universe—because here, every action sparks an equal and opposite reaction!",
-    "Robotica Cluster dives into the field of robotics, offering students insights into robotic design, automation, and real-world applications. It helps students explore the latest advancements in technology and engineering.",
-    "Sportiva Cluster promotes the spirit of sports and fitness, encouraging students to build strength, resilience, and teamwork through various athletic and recreational activities.",
-    "Strategia Cluster, driven by the Commerce Department, sharpens your financial foresight and strategic perception! Master the art of market dynamics, balance the books of uncertainty, and calculate your next move with precision—because in strategy, every decision counts!",
+    Color(0xFF8D6E63), // Earthy Mocha
+    Color(0xFFFFA726), // Warm Orange
+    Color(0xFFAB47BC), // Vibrant Purple
+    Color(0xFF64B5F6), // Light Sky Blue
+    Color(0xFFAED581), // Fresh Green
+    Color(0xFF9575CD), // Muted Purple
+    Color(0xFFFF8A65), // Peach
+    Color(0xFFBCAAA4), // Warm Taupe
+    Color(0xFF81C784), // Leaf Green
   ];
   static List<String> reglink = [
     "https://forms.gle/YzKZTvcNYgYNpPV28",
@@ -105,10 +105,10 @@ class _ClusterDetailsState extends State<ClusterDetails> {
   ];
   static List<List<String>> HeadClass = [
     ["II - B.Tech ECE B", "III - B.Com A"],
-    ["III - B.Sc Micro", "III - B.Sc Bio", ],
+    ["III - B.Sc Micro", "III - B.Sc Bio"],
     ["III - B.Tech ECE B", "III - B.Tech ECE B"],
     ["III - B.Tech CSE A", "III - BCA C", "III - B.Sc CS B"],
-    ["III - B.Sc MCA", "II - B.Sc MCA",],
+    ["III - B.Sc MCA", "II - B.Sc MCA"],
     ["III - B.Sc Physics", "III - B.Sc Physics"],
     ["III - B.Tech ECE A", "III - B.Tech ECE B"],
     ["III - B.Com D", "III - B.Com D"],
@@ -128,12 +128,14 @@ class _ClusterDetailsState extends State<ClusterDetails> {
   final List<ClusterDataModel> Cluster = List.generate(
     Name.length,
         (index) => ClusterDataModel(
-        '${Name[index]}',
-        '${url[index]}',
-        '${desc[index]}',
-        '${BoxColor[index]}',
-        '${reglink[index]}',
-        '${HeadName[index]}', '${HeadClass[index]}','${HeadContact[index]}'
+      '${Name[index]}',
+      '${url[index]}',
+      '${desc[index]}',
+      '${BoxColor[index]}',
+      '${reglink[index]}',
+      '${HeadName[index]}',
+      '${HeadClass[index]}',
+      '${HeadContact[index]}',
     ),
   );
 
@@ -189,7 +191,7 @@ class _ClusterDetailsState extends State<ClusterDetails> {
                         child: Text(
                           widget.clusterDataModel.name,
                           textAlign: TextAlign.start,
-                          style: GoogleFonts.montserrat(
+                          style: GoogleFonts.poppins(
                               color: color,
                               fontWeight: FontWeight.bold,
                               fontSize: 35,
@@ -243,7 +245,7 @@ class _ClusterDetailsState extends State<ClusterDetails> {
                 children: [
                   Text(
                     'Description',
-                    style: GoogleFonts.montserrat(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
@@ -252,7 +254,7 @@ class _ClusterDetailsState extends State<ClusterDetails> {
                   SizedBox(height: 18),
                   Text(
                     widget.clusterDataModel.desc,
-                    style: GoogleFonts.lora(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
@@ -270,8 +272,8 @@ class _ClusterDetailsState extends State<ClusterDetails> {
                   ExpansionTile(
                     initiallyExpanded: false,
                     title: Text(
-                      'Committee Heads',
-                      style: GoogleFonts.montserrat(
+                      'Cluster Heads',
+                      style: GoogleFonts.poppins(
                         color: color,
                         fontWeight: FontWeight.bold,
                         fontSize: 28,
@@ -286,7 +288,7 @@ class _ClusterDetailsState extends State<ClusterDetails> {
                             return Center(
                               child: Text(
                                 "No data available",
-                                style: GoogleFonts.lora(fontSize: 18, color: Colors.red),
+                                style: GoogleFonts.poppins(fontSize: 18, color: Colors.red),
                               ),
                             );
                           }
@@ -320,7 +322,7 @@ class _ClusterDetailsState extends State<ClusterDetails> {
                                       SizedBox(height: 10),
                                       Text(
                                         HeadName[index][i],
-                                        style: GoogleFonts.montserrat(
+                                        style: GoogleFonts.poppins(
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.black,
@@ -329,7 +331,7 @@ class _ClusterDetailsState extends State<ClusterDetails> {
                                       ),
                                       Text(
                                         HeadClass[index][i],
-                                        style: GoogleFonts.lora(fontSize: 18, color: Colors.grey[700]),
+                                        style: GoogleFonts.poppins(fontSize: 18, color: Colors.grey[700]),
                                         textAlign: TextAlign.center,
                                       ),
                                       SizedBox(height: 8),
@@ -338,7 +340,7 @@ class _ClusterDetailsState extends State<ClusterDetails> {
                                         children: [
                                           Text(
                                             HeadContact[index][i],
-                                            style: GoogleFonts.lora(fontSize: 18, color: Colors.black87),
+                                            style: GoogleFonts.poppins(fontSize: 18, color: Colors.black87),
                                           ),
                                           SizedBox(width: 8),
                                           GestureDetector(
@@ -349,7 +351,7 @@ class _ClusterDetailsState extends State<ClusterDetails> {
                                               ScaffoldMessenger.of(context).showSnackBar(
                                                 SnackBar(
                                                   content: Text("Phone number copied!",
-                                                    style: GoogleFonts.lora(fontSize: 18, color: Colors.black87),
+                                                    style: GoogleFonts.poppins(fontSize: 18, color: Colors.black87),
                                                   ),
                                                   duration: Duration(seconds: 1),
                                                 ),
@@ -373,50 +375,50 @@ class _ClusterDetailsState extends State<ClusterDetails> {
               ),
             ),
             SizedBox(height: 50),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(
-                child: isRegistrationClosed
-                    ? Text(
-                  "❌ Registration Closed!",
-                  style: GoogleFonts.montserrat(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.red,
-                  ),
-                )
-                    : ElevatedButton(
-                  onPressed: () async {
-                    String googleFormUrl =  widget.clusterDataModel.reglink; // Replace with actual link
-                    if (await canLaunch(googleFormUrl)) {
-                      await launch(googleFormUrl);
-                    } else {
-                      throw "Could not launch $googleFormUrl";
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepPurple,
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        "Register Now",
-                        style: GoogleFonts.montserrat(fontSize: 18, color: Colors.white),
-                      ),
-                      Text(
-                        "(Closes at: $formattedDeadline)",
-                        style: GoogleFonts.montserrat(fontSize: 14, color: Colors.white70),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 50),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: Center(
+            //     child: isRegistrationClosed
+            //         ? Text(
+            //       "❌ Registration Closed!",
+            //       style: GoogleFonts.poppins(
+            //         fontSize: 20,
+            //         fontWeight: FontWeight.bold,
+            //         color: Colors.red,
+            //       ),
+            //     )
+            //         : ElevatedButton(
+            //       onPressed: () async {
+            //         String googleFormUrl =  widget.clusterDataModel.reglink; // Replace with actual link
+            //         if (await canLaunch(googleFormUrl)) {
+            //           await launch(googleFormUrl);
+            //         } else {
+            //           throw "Could not launch $googleFormUrl";
+            //         }
+            //       },
+            //       style: ElevatedButton.styleFrom(
+            //         backgroundColor: Colors.deepPurple,
+            //         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+            //         shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(10),
+            //         ),
+            //       ),
+            //       child: Column(
+            //         children: [
+            //           Text(
+            //             "Register Now",
+            //             style: GoogleFonts.poppins(fontSize: 18, color: Colors.white),
+            //           ),
+            //           Text(
+            //             "(Closes at: $formattedDeadline)",
+            //             style: GoogleFonts.poppins(fontSize: 14, color: Colors.white70),
+            //           ),
+            //         ],
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            // SizedBox(height: 50),
           ],
         ),
       ),

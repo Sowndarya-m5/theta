@@ -35,22 +35,22 @@ class _ClubDetailsState extends State<ClubDetails> {
     "Emulsion",
     "Equilibria",
     "Pixelq",
-    "Vinodha Vaahini",
+    "VinodhaVaahini",
     "Webtek",
   ];
   static List urlc4 = [
-    "asset/club/emulsion.gif",
-    "asset/club/Equilibria.gif",
-    "asset/club/pixelq.gif",
-    "asset/club/v.gif",
-    "asset/club/webtex.gif",
+    "asset/club/EmulsionLogo.png",
+    "asset/club/PothigaiMandramLogo.jpg",
+    "asset/club/pixelQ.png",
+    "asset/club/VinodhaVahiniLogo.jpg",
+    "asset/club/Webtek Logo.png",
   ];
   static List BoxColorc4 = [
-    Color(0xFFFBDCDA),
-    Color(0xFFD4EEF3),
-    Color(0xFFFAE6D5),
-    Color(0xFFEFCFE7),
-    Color(0xffF7A593),
+    Color(0xFFFF7043), // Deep Coral
+    Color(0xFF26A69A), // Vibrant Teal
+    Color(0xFFD4A373), // Warm Sand
+    Color(0xFF6D4C41), // Rich Brown
+    Color(0xFF42A5F5), // Bright Blue
   ];
   static List<String> descc4 = [
     "A club dedicated to photography and filmmaking. It focuses on capturing moments through creative photography, cinematography, and editing. The club organizes workshops, photo walks, short film contests, and exhibitions to enhance visual storytelling skills.",
@@ -89,7 +89,7 @@ class _ClubDetailsState extends State<ClubDetails> {
   ];
   final List<ClubDataModel> club = List.generate(
     Namec4.length,
-    (index) => ClubDataModel(
+        (index) => ClubDataModel(
       '${Namec4[index]}',
       '${urlc4[index]}',
       '${descc4[index]}',
@@ -142,7 +142,7 @@ class _ClubDetailsState extends State<ClubDetails> {
                         child: Text(
                           widget.clubDataModel.name,
                           textAlign: TextAlign.start,
-                          style: GoogleFonts.montserrat(
+                          style: GoogleFonts.poppins(
                             color: color,
                             fontWeight: FontWeight.bold,
                             fontSize: 35,
@@ -175,10 +175,13 @@ class _ClubDetailsState extends State<ClubDetails> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Image.asset(
-                            widget.clubDataModel.ImageUrl,
-                            height: 150,
-                            width: 150,
+                          ClipOval(
+                            child: Image.asset(
+                              widget.clubDataModel.ImageUrl,
+                              height: 150,
+                              width: 150,
+                              fit: BoxFit.fill,
+                            ),
                           ),
                         ],
                       ),
@@ -195,7 +198,7 @@ class _ClubDetailsState extends State<ClubDetails> {
                 children: [
                   Text(
                     'Description',
-                    style:GoogleFonts.montserrat(
+                    style:GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
@@ -204,7 +207,7 @@ class _ClubDetailsState extends State<ClubDetails> {
                   SizedBox(height: 18),
                   Text(
                     widget.clubDataModel.desc,
-                    style: GoogleFonts.lora( // Apply Poppins font
+                    style: GoogleFonts.poppins( // Apply Poppins font
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
                       color: color,
@@ -222,8 +225,8 @@ class _ClubDetailsState extends State<ClubDetails> {
                   ExpansionTile(
                     initiallyExpanded: false,
                     title: Text(
-                      'Committee Heads',
-                      style: GoogleFonts.montserrat(
+                      'Club Heads',
+                      style: GoogleFonts.poppins(
                         color: color,
                         fontWeight: FontWeight.bold,
                         fontSize: 28,
@@ -238,7 +241,7 @@ class _ClubDetailsState extends State<ClubDetails> {
                             return Center(
                               child: Text(
                                 "No data available",
-                                style: GoogleFonts.lora(fontSize: 18, color: Colors.red),
+                                style: GoogleFonts.poppins(fontSize: 18, color: Colors.red),
                               ),
                             );
                           }
@@ -272,7 +275,7 @@ class _ClubDetailsState extends State<ClubDetails> {
                                       SizedBox(height: 10),
                                       Text(
                                         HeadNamesc4[index][i],
-                                        style: GoogleFonts.montserrat(
+                                        style: GoogleFonts.poppins(
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.black,
@@ -281,7 +284,7 @@ class _ClubDetailsState extends State<ClubDetails> {
                                       ),
                                       Text(
                                         HeadClassc4[index][i],
-                                        style: GoogleFonts.lora(fontSize: 18, color: Colors.grey[700]),
+                                        style: GoogleFonts.poppins(fontSize: 18, color: Colors.grey[700]),
                                         textAlign: TextAlign.center,
                                       ),
                                       SizedBox(height: 8),
@@ -290,7 +293,7 @@ class _ClubDetailsState extends State<ClubDetails> {
                                         children: [
                                           Text(
                                             HeadContactc4[index][i],
-                                            style: GoogleFonts.lora(fontSize: 18, color: Colors.black87),
+                                            style: GoogleFonts.poppins(fontSize: 18, color: Colors.black87),
                                           ),
                                           SizedBox(width: 8),
                                           GestureDetector(
@@ -301,7 +304,7 @@ class _ClubDetailsState extends State<ClubDetails> {
                                               ScaffoldMessenger.of(context).showSnackBar(
                                                 SnackBar(
                                                   content: Text("Phone number copied!",
-                                                    style: GoogleFonts.lora(fontSize: 18, color: Colors.black87),
+                                                    style: GoogleFonts.poppins(fontSize: 18, color: Colors.black87),
                                                   ),
                                                   duration: Duration(seconds: 1),
                                                 ),
@@ -326,52 +329,52 @@ class _ClubDetailsState extends State<ClubDetails> {
             ),
 
             SizedBox(height: 50),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: isRegistrationClosed
-                      ? Text(
-                    "❌ Registration Closed!",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.red,
-                    ),
-                  )
-                      : ElevatedButton(
-                    onPressed: () async {
-                      String googleFormUrl = widget.clubDataModel.reglink;
-                      if (await canLaunch(googleFormUrl)) {
-                        await launch(googleFormUrl);
-                      } else {
-                        throw "Could not launch $googleFormUrl";
-                      }
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepPurple,
-                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          "Register Now",
-                          style: TextStyle(fontSize: 18, color: Colors.white),
-                        ),
-                        Text(
-                          "(Closes at: $formattedDeadline)",
-                          style: TextStyle(fontSize: 14, color: Colors.white70),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
+            // Center(
+            //   child: Padding(
+            //     padding: const EdgeInsets.all(8.0),
+            //     child: Center(
+            //       child: isRegistrationClosed
+            //           ? Text(
+            //         "❌ Registration Closed!",
+            //         style: TextStyle(
+            //           fontSize: 20,
+            //           fontWeight: FontWeight.bold,
+            //           color: Colors.red,
+            //         ),
+            //       )
+            //           : ElevatedButton(
+            //         onPressed: () async {
+            //           String googleFormUrl = widget.clubDataModel.reglink;
+            //           if (await canLaunch(googleFormUrl)) {
+            //             await launch(googleFormUrl);
+            //           } else {
+            //             throw "Could not launch $googleFormUrl";
+            //           }
+            //         },
+            //         style: ElevatedButton.styleFrom(
+            //           backgroundColor: Colors.deepPurple,
+            //           padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+            //           shape: RoundedRectangleBorder(
+            //             borderRadius: BorderRadius.circular(10),
+            //           ),
+            //         ),
+            //         child: Column(
+            //           children: [
+            //             Text(
+            //               "Register Now",
+            //               style: TextStyle(fontSize: 18, color: Colors.white),
+            //             ),
+            //             Text(
+            //               "(Closes at: $formattedDeadline)",
+            //               style: TextStyle(fontSize: 14, color: Colors.white70),
+            //             ),
+            //           ],
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            // SizedBox(height: 20),
           ],
         ),
       ),

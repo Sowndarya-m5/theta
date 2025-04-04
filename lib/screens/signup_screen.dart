@@ -88,7 +88,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       // get started text
                       Text(
                         'GET STARTED!!',
-                        style: GoogleFonts.montserrat(
+                        style: GoogleFonts.poppins(
                           fontSize: 30.0,
                           fontWeight: FontWeight.w900,
                         ),
@@ -245,7 +245,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         children: [
                           Text(
                             'Already have an account? ',
-                            style: GoogleFonts.lora(color: Colors.black),
+                            style: GoogleFonts.poppins(color: Colors.black),
                           ),
                           GestureDetector(
                             onTap: () {
@@ -258,7 +258,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             },
                             child: Text(
                               'Log in',
-                              style: GoogleFonts.montserrat(fontWeight: FontWeight.bold),
+                              style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
                             ),
                           ),
                         ],

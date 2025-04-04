@@ -61,7 +61,7 @@ class _CartScreenState extends State<CartScreen> {
           AppBar(
             title: Text(
               '         EVENTS AND WORKSHOPS',
-              style: GoogleFonts.montserrat(color: color),
+              style: GoogleFonts.poppins(color: color),
             ),
             automaticallyImplyLeading: false,
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,

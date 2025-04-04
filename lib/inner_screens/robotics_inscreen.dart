@@ -92,7 +92,7 @@ class RoboInScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: Text(
           "workshop and events",
-          style: GoogleFonts.montserrat(
+          style: GoogleFonts.poppins(
             color: color,
             fontSize: 24,
           ),
@@ -121,7 +121,7 @@ class RoboInScreen extends StatelessWidget {
       return Center(
         child: Text(
           emptyMessage,
-          style: GoogleFonts.lora(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey),
+          style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey),
         ),
       );
     }
@@ -167,7 +167,7 @@ class RoboInScreen extends StatelessWidget {
               children: [
                 Text(
                   data[index].cname,
-                  style: GoogleFonts.montserrat(fontWeight: FontWeight.bold, fontSize: 19),
+                  style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 19),
                 ),
                 Container(
                   height: screenWidth * 0.625,
@@ -179,7 +179,7 @@ class RoboInScreen extends StatelessWidget {
                 ),
                 Text(
                   data[index].name,
-                  style: GoogleFonts.montserrat(fontWeight: FontWeight.bold, fontSize: 19),
+                  style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 19),
                 ),
               ],
             ),

@@ -60,10 +60,11 @@ class _CountdownCardState extends State<CountdownCard>
     int seconds = timeRemaining.inSeconds % 60;
 
     List<Color> cardColors = [
-      Colors.orange.shade100,
-      Colors.blue.shade100,
-      Colors.green.shade100,
-      Colors.purple.shade100,
+
+      Color(0xFF4DB6AC), // Mint Teal
+      Color(0xFF7986CB), // Soft Blue
+      Color(0xFFFFD54F), // Golden Yellow
+
     ];
     Color boxColor =
     cardColors[widget.eventName.length % cardColors.length];
@@ -103,7 +104,7 @@ class _CountdownCardState extends State<CountdownCard>
                     children: [
                       Text(
                         "$days Days",
-                        style: GoogleFonts.montserrat(
+                        style: GoogleFonts.poppins(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -128,55 +129,55 @@ class _CountdownCardState extends State<CountdownCard>
               SizedBox(height: 10),
               Text(
                 widget.eventName,
-                style: GoogleFonts.montserrat(fontSize: 22, fontWeight: FontWeight.bold),
+                style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
-              Center(
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => FullDetailsScreen(
-                          eventName: widget.eventName,
-                          eventImageUrl: widget.eventImageUrl,
-                          students: widget.students,
-                          eventDate: widget.eventDate,
-                        ),
-                      ),
-                    );
-                  },
-                  child: AnimatedContainer(
-                    duration: Duration(milliseconds: 600),
-                    curve: Curves.easeOutBack,
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    height: 35,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      // boxShadow: [
-                      //   BoxShadow(
-                      //     color: Colors.pink.withOpacity(0.4),
-                      //     blurRadius: 15,
-                      //     spreadRadius: 3,
-                      //   ),
-                      // ],
-                    ),
-                    alignment: Alignment.center,
-                    child: Shimmer.fromColors(
-                      baseColor: Colors.white,
-                      highlightColor: Colors.pinkAccent,
-                      child: Text(
-                        "View More",
-                        style: GoogleFonts.lora(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              // SizedBox(height: 10),
+              // Center(
+              //   child: GestureDetector(
+              //     onTap: () {
+              //       Navigator.push(
+              //         context,
+              //         MaterialPageRoute(
+              //           builder: (context) => FullDetailsScreen(
+              //             eventName: widget.eventName,
+              //             eventImageUrl: widget.eventImageUrl,
+              //             students: widget.students,
+              //             eventDate: widget.eventDate,
+              //           ),
+              //         ),
+              //       );
+              //     },
+              //     child: AnimatedContainer(
+              //       duration: Duration(milliseconds: 600),
+              //       curve: Curves.easeOutBack,
+              //       width: MediaQuery.of(context).size.width * 0.4,
+              //       height: 35,
+              //       decoration: BoxDecoration(
+              //         borderRadius: BorderRadius.circular(12),
+              //         // boxShadow: [
+              //         //   BoxShadow(
+              //         //     color: Colors.pink.withOpacity(0.4),
+              //         //     blurRadius: 15,
+              //         //     spreadRadius: 3,
+              //         //   ),
+              //         // ],
+              //       ),
+              //       alignment: Alignment.center,
+              //       child: Shimmer.fromColors(
+              //         baseColor: Colors.white,
+              //         highlightColor: Colors.pinkAccent,
+              //         child: Text(
+              //           "View More",
+              //           style: GoogleFonts.poppins(
+              //             fontSize: 18,
+              //             fontWeight: FontWeight.bold,
+              //             color: Colors.white,
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),

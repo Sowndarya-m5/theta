@@ -85,9 +85,11 @@ class _SignInScreenState extends State<SignInScreen> {
     return CustomScaffold(
       child: Column(
         children: [
+
           const Expanded(flex: 1, child: SizedBox(height: 10)),
           Expanded(
             flex: 7,
+
             child: Container(
               padding: const EdgeInsets.fromLTRB(25.0, 50.0, 25.0, 20.0),
               decoration: BoxDecoration(
@@ -105,7 +107,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     children: [
                       Text(
                         'WELCOME BACK!!',
-                        style: GoogleFonts.montserrat(
+                        style: GoogleFonts.poppins(
                           fontSize: 30.0,
                           fontWeight: FontWeight.w900,
                         ),
@@ -202,7 +204,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               },
                               child: Text(
                                 'Forget password?',
-                                style: GoogleFonts.lora(fontWeight: FontWeight.bold),
+                                style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),
@@ -238,7 +240,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 SizedBox(width: 5),
                                 Text(
                                   "Sign in with Google",
-                                  style: GoogleFonts.montserrat(
+                                  style: GoogleFonts.poppins(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -257,7 +259,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         children: [
                            Text(
                             'Don\'t have an account? ',
-                            style: GoogleFonts.lora(color: Colors.black),
+                            style: GoogleFonts.poppins(color: Colors.black),
                           ),
                           GestureDetector(
                             onTap: () {
@@ -270,7 +272,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             },
                             child: Text(
                               'Sign up',
-                              style: GoogleFonts.montserrat(fontWeight: FontWeight.bold),
+                              style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
                             ),
                           ),
                         ],

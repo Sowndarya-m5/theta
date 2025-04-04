@@ -39,7 +39,7 @@ class welcomeButton extends StatelessWidget {
         child: Text(
           buttontext!,
           textAlign: TextAlign.center,
-          style: GoogleFonts.montserrat(
+          style: GoogleFonts.poppins(
             fontSize: 20.0,
             fontWeight: FontWeight.bold,
             color: textColor,

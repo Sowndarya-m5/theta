@@ -93,7 +93,7 @@ class _SpoDetailsState extends State<SpoDetails> {
                         child: Text(
                           widget.spoDataModel.name,
                           textAlign: TextAlign.start,
-                          style: GoogleFonts.montserrat(
+                          style: GoogleFonts.poppins(
                             color: color,
                             fontWeight: FontWeight.bold,
                             fontSize: 35,
@@ -118,7 +118,7 @@ class _SpoDetailsState extends State<SpoDetails> {
                 children: [
                   Text(
                     'Event Coordinator',
-                    style: GoogleFonts.montserrat(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
@@ -127,7 +127,7 @@ class _SpoDetailsState extends State<SpoDetails> {
                   SizedBox(height: 18),
                   Text(
                     widget.spoDataModel.coname,
-                    style: GoogleFonts.lora(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
@@ -144,7 +144,7 @@ class _SpoDetailsState extends State<SpoDetails> {
                 children: [
                   Text(
                     'Description',
-                    style: GoogleFonts.montserrat(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
@@ -153,7 +153,7 @@ class _SpoDetailsState extends State<SpoDetails> {
                   SizedBox(height: 18),
                   Text(
                     widget.spoDataModel.desc,
-                    style: GoogleFonts.lora(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
@@ -170,7 +170,7 @@ class _SpoDetailsState extends State<SpoDetails> {
                   children: [
                     Text(
                       "Date",
-                      style: GoogleFonts.montserrat(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         color: color,
                         fontWeight: FontWeight.w500,
@@ -179,7 +179,7 @@ class _SpoDetailsState extends State<SpoDetails> {
                     SizedBox(height: 8),
                     Text(
                       widget.spoDataModel.date,
-                      style: GoogleFonts.lora(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: color,
@@ -196,7 +196,7 @@ class _SpoDetailsState extends State<SpoDetails> {
                   children: [
                     Text(
                       "Time",
-                      style: GoogleFonts.montserrat(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         color: color,
                         fontWeight: FontWeight.w500,
@@ -205,7 +205,7 @@ class _SpoDetailsState extends State<SpoDetails> {
                     SizedBox(height: 8),
                     Text(
                       widget.spoDataModel.time,
-                      style: GoogleFonts.lora(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: color,
@@ -222,7 +222,7 @@ class _SpoDetailsState extends State<SpoDetails> {
                   children: [
                     Text(
                       "Venue",
-                      style: GoogleFonts.montserrat(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         color: color,
                         fontWeight: FontWeight.w500,
@@ -231,7 +231,7 @@ class _SpoDetailsState extends State<SpoDetails> {
                     SizedBox(height: 8),
                     Text(
                       widget.spoDataModel.venue,
-                      style: GoogleFonts.lora(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: color,
@@ -269,13 +269,13 @@ class _SpoDetailsState extends State<SpoDetails> {
                         ),
                         child: Text(
                           "Register Now",
-                          style: GoogleFonts.montserrat(fontSize: 18, color: Colors.white),
+                          style: GoogleFonts.poppins(fontSize: 18, color: Colors.white),
                         ),
                       )
                     else
                       Text(
                         "Registration is Closed",
-                        style: GoogleFonts.montserrat(fontSize: 18, color: Colors.red, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(fontSize: 18, color: Colors.red, fontWeight: FontWeight.bold),
                       ),
 
                     if (showClosingTime && now.isBefore(registrationDeadline))
@@ -283,7 +283,7 @@ class _SpoDetailsState extends State<SpoDetails> {
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(
                           "(Closes at: $formattedDeadline)",
-                          style: GoogleFonts.montserrat(fontSize: 14, color: Colors.red),
+                          style: GoogleFonts.poppins(fontSize: 14, color: Colors.red),
                         ),
                       ),
                   ],

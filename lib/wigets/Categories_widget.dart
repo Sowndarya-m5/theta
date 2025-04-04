@@ -33,12 +33,12 @@ class CategoriesWidget extends StatelessWidget {
         children: [
           Text(
             day,
-            style: GoogleFonts.montserrat(
+            style: GoogleFonts.poppins(
                 color: color, fontSize: 20, fontWeight: FontWeight.w400),
           ),
           Text(
             date,
-            style: GoogleFonts.montserrat(
+            style: GoogleFonts.poppins(
                 color: color, fontSize: 20, fontWeight: FontWeight.w400),
           ),
           Container(

@@ -13,7 +13,7 @@ class ClusterInScreen extends StatelessWidget {
   ClusterInScreen({Key? key}) : super(key: key);
 
   static List<String> Name = [
-    "Access India",
+    "AccessIndia",
     "Biogenesis",
     "Electronica",
     "Informatica",
@@ -22,6 +22,17 @@ class ClusterInScreen extends StatelessWidget {
     "Robotics",
     "Sportiva",
     "Strategia",
+  ];
+  static List<String> desc = [
+    "AccessIndia Cluster helps students strengthen their ability to work together, communicate effectively, and think creatively. It creates an environment where students learn to adapt, lead, and solve challenges as a team.",
+    "Biogenesis Cluster explores the fascinating world of life sciences, covering topics like biotechnology, genetics, and molecular biology. It helps students understand the building blocks of life and discover advancements shaping the future of biology.",
+    "Electronica Cluster focuses on the world of electronics, guiding students through circuits, microcontrollers, and innovative electronic systems. It explores the latest trends in electronic design and technology.",
+    "Informatica is a student-run organization focused on bringing together like-minded individuals interested in computer science and technology. The club aims to provide its members with opportunities to develop their technical skills, participate in coding competitions, network with industry professionals, and learn about emerging trends in the field",
+    "Mathematica Cluster delves into the world of numbers and patterns, helping students explore mathematical concepts, problem-solving strategies, and logical thinking.",
+    "Optica Cluster, powered by the Physics Department, accelerates your curiosity with momentum! Dive into the dynamics of motion, unravel the mysteries of quantum states, and reflect on the wonders of the universe—because here, every action sparks an equal and opposite reaction!",
+    "Robotica Cluster dives into the field of robotics, offering students insights into robotic design, automation, and real-world applications. It helps students explore the latest advancements in technology and engineering.",
+    "Sportiva Cluster promotes the spirit of sports and fitness, encouraging students to build strength, resilience, and teamwork through various athletic and recreational activities.",
+    "Strategia Cluster, driven by the Commerce Department, sharpens your financial foresight and strategic perception! Master the art of market dynamics, balance the books of uncertainty, and calculate your next move with precision—because in strategy, every decision counts!",
   ];
   static List url = [
     "asset/clusterlogo/A.I.png",
@@ -35,26 +46,15 @@ class ClusterInScreen extends StatelessWidget {
     "asset/clusterlogo/Strategia Logo.jpg",
   ];
   static List BoxColor = [
-    Color(0xFFFBDCDA),
-    Color(0xFFD4EEF3),
-    Color(0xFFFAE6D5),
-    Color(0xFFEFCFE7),
-    Color(0xffF7A593),
-    Color(0xffF8A44c),
-    Color(0xffD3B0E0),
-    Color(0xffFDE598),
-    Color(0xFFFBDCDA),
-  ];
-  static List<String> desc = [
-    "Access India Cluster helps students strengthen their ability to work together, communicate effectively, and think creatively. It creates an environment where students learn to adapt, lead, and solve challenges as a team.",
-    "Biogenesis Cluster explores the fascinating world of life sciences, covering topics like biotechnology, genetics, and molecular biology. It helps students understand the building blocks of life and discover advancements shaping the future of biology.",
-    "Electronica Cluster focuses on the world of electronics, guiding students through circuits, microcontrollers, and innovative electronic systems. It explores the latest trends in electronic design and technology.",
-    "Informatica is a student-run organization focused on bringing together like-minded individuals interested in computer science and technology. The club aims to provide its members with opportunities to develop their technical skills, participate in coding competitions, network with industry professionals, and learn about emerging trends in the field",
-    "Mathematica Cluster delves into the world of numbers and patterns, helping students explore mathematical concepts, problem-solving strategies, and logical thinking.",
-    "Optica Cluster, powered by the Physics Department, accelerates your curiosity with momentum! Dive into the dynamics of motion, unravel the mysteries of quantum states, and reflect on the wonders of the universe—because here, every action sparks an equal and opposite reaction!",
-    "Robotica Cluster dives into the field of robotics, offering students insights into robotic design, automation, and real-world applications. It helps students explore the latest advancements in technology and engineering.",
-    "Sportiva Cluster promotes the spirit of sports and fitness, encouraging students to build strength, resilience, and teamwork through various athletic and recreational activities.",
-    "Strategia Cluster, driven by the Commerce Department, sharpens your financial foresight and strategic perception! Master the art of market dynamics, balance the books of uncertainty, and calculate your next move with precision—because in strategy, every decision counts!",
+    Color(0xFF8D6E63), // Earthy Mocha
+    Color(0xFFFFA726), // Warm Orange
+    Color(0xFFAB47BC), // Vibrant Purple
+    Color(0xFF64B5F6), // Light Sky Blue
+    Color(0xFFAED581), // Fresh Green
+    Color(0xFF9575CD), // Muted Purple
+    Color(0xFFFF8A65), // Peach
+    Color(0xFFBCAAA4), // Warm Taupe
+    Color(0xFF81C784), // Leaf Green
   ];
   static List<String> reglink = [
     "https://forms.gle/YzKZTvcNYgYNpPV28",
@@ -80,10 +80,10 @@ class ClusterInScreen extends StatelessWidget {
   ];
   static List<List<String>> HeadClass = [
     ["II - B.Tech ECE B", "III - B.Com A"],
-    ["III - B.Sc Micro", "III - B.Sc Bio", ],
+    ["III - B.Sc Micro", "III - B.Sc Bio"],
     ["III - B.Tech ECE B", "III - B.Tech ECE B"],
     ["III - B.Tech CSE A", "III - BCA C", "III - B.Sc CS B"],
-    ["III - B.Sc MCA", "II - B.Sc MCA",],
+    ["III - B.Sc MCA", "II - B.Sc MCA"],
     ["III - B.Sc Physics", "III - B.Sc Physics"],
     ["III - B.Tech ECE A", "III - B.Tech ECE B"],
     ["III - B.Com D", "III - B.Com D"],
@@ -108,7 +108,9 @@ class ClusterInScreen extends StatelessWidget {
       '${desc[index]}',
       '${BoxColor[index]}',
       '${reglink[index]}',
-            '${HeadName[index]}', '${HeadClass[index]}','${HeadContact[index]}'
+      '${HeadName[index]}',
+      '${HeadClass[index]}',
+      '${HeadContact[index]}',
     ),
   );
 
@@ -137,7 +139,7 @@ class ClusterInScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: Text(
           "Cluster",
-          style: GoogleFonts.montserrat(
+          style: GoogleFonts.poppins(
             color: color,
             fontSize: 24,
           ),
@@ -196,7 +198,7 @@ class ClusterInScreen extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 5.0),
                       child: Text(
                         Cluster[index].name,
-                        style: GoogleFonts.montserrat(
+                        style: GoogleFonts.poppins(
                           fontWeight: FontWeight.bold,
                           fontSize: 19,
                         ),

@@ -17,22 +17,22 @@ class ClubInScreen extends StatelessWidget {
     "Emulsion",
     "Equilibria",
     "Pixelq",
-    "Vinodha Vaahini",
+    "VinodhaVaahini",
     "Webtek",
   ];
   static List urlc4 = [
-    "asset/club/emulsion.gif",
-    "asset/club/Equilibria.gif",
-    "asset/club/pixelq.gif",
-    "asset/club/v.gif",
-    "asset/club/webtex.gif",
+    "asset/club/EmulsionLogo.png",
+    "asset/club/PothigaiMandramLogo.jpg",
+    "asset/club/pixelQ.png",
+    "asset/club/VinodhaVahiniLogo.jpg",
+    "asset/club/Webtek Logo.png",
   ];
   static List BoxColorc4 = [
-    Color(0xFFFBDCDA),
-    Color(0xFFD4EEF3),
-    Color(0xFFFAE6D5),
-    Color(0xFFEFCFE7),
-    Color(0xffF7A593),
+    Color(0xFFFF7043), // Deep Coral
+    Color(0xFF26A69A), // Vibrant Teal
+    Color(0xFFD4A373), // Warm Sand
+    Color(0xFF6D4C41), // Rich Brown
+    Color(0xFF42A5F5), // Bright Blue
   ];
   static List<String> descc4 = [
     "A club dedicated to photography and filmmaking. It focuses on capturing moments through creative photography, cinematography, and editing. The club organizes workshops, photo walks, short film contests, and exhibitions to enhance visual storytelling skills.",
@@ -49,26 +49,25 @@ class ClubInScreen extends StatelessWidget {
     "https://forms.gle/YzKZTvcNYgYNpPV28",
   ];
   static List<List<String>> HeadNamesc4 = [
-    [" Vedasri S", "Karthick C"],
-    ["Tharunya V R", "Vishnupriya S", "Yoganandhini R R"],
-    ["Viveca B", "Madhumitha R", "Sakthikumar S", "Harinisri J"],
-    ["Manikandan D", "Vijay Sankaran K", "Keerthivasan K"],
-    ["Mirudhula K", "Swetha S", "Surya R", "Arulkumaran S"],
+    ["Harish Kumar S", "Mohamed Shafeeq H"],
+    ["Sarguru Ramakrishnan A", "Haripriya S", "Kapilsai"],
+    ["Harish A S", "Deepa B", "Bavadharani S", "Baranidharan M"],
+    ["Vedasri S", "Yaswanth A"],
+    ["Mohamed Haaroon A"],
   ];
   static List<List<String>> HeadClassc4 = [
-    ["III - B.Tech CSE A", "I - M.Sc Maths"],
-    ["III - B.Com B", "III - BCA A", "III - BCA A"],
-    ["IV - B.Tech CSE C", " I - M.Com", " III - B.Com A", "III - B.Tech ECE B"],
-    ["III - B.Sc CS B", "III - B.Tech ECE B", "III - B.Sc CS A"],
-    ["II - M.Com", "II - M.Com", " I - M.Com", " III - B.Com A"],
+    ["III - B.Tech ECE A", "II - B.Sc CS A"],
+    ["II - B.Sc Physics", "II - B.Com A", "I - B.Sc CS"],
+    ["III - B.Sc CS B", "I - M.Com", "II - B.Com D", "II - B.Com D"],
+    ["III - B.Tech CSE A", "III - B.Tech CSE B"],
+    ["II - BCA A"],
   ];
   static List<List<String>> HeadContactc4 = [
-    ["7989349078", "9025160046"],
-    ["9940068863", "8072546991", "8015453076"],
-    ["9092585520", "9150849634", "9344835456", "7826038254"],
-    ["6381279757", "8903752570", "8946095982"],
-    ["9940481413", "8056615432", "9894474013", "9786499039"],
-
+    ["6379714145", "9150373948"],
+    ["9445277652", "9150229427", "9626326800"],
+    ["6369630911", "8778763571", "8122768628", "9360501915"],
+    ["7989349078", "9059398206"],
+    ["9500669628"],
   ];
   final List<ClubDataModel> club = List.generate(
     Namec4.length,
@@ -77,9 +76,10 @@ class ClubInScreen extends StatelessWidget {
       '${urlc4[index]}',
       '${descc4[index]}',
       '${BoxColorc4[index]}',
-      '${reglink4[index]}','${HeadNamesc4[index]}',
-          '${HeadClassc4[index]}',
-          '${HeadContactc4[index]}',
+      '${reglink4[index]}',
+      '${HeadNamesc4[index]}',
+      '${HeadClassc4[index]}',
+      '${HeadContactc4[index]}',
     ),
   );
 
@@ -109,7 +109,7 @@ class ClubInScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: Text(
           "Club",
-          style: GoogleFonts.montserrat(
+          style: GoogleFonts.poppins(
             color: color,
             fontSize: 24,
           ),
@@ -153,14 +153,17 @@ class ClubInScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Image.asset(
-                    club[index].ImageUrl,
-                    height: 120,
-                    width: 120,
+                  ClipOval(
+                    child: Image.asset(
+                      club[index].ImageUrl,
+                      height: 120,
+                      width: 120,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   Text(
                     club[index].name,
-                    style: GoogleFonts.montserrat(
+                    style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
                       fontSize: 19,
                     ),

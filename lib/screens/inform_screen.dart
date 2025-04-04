@@ -94,7 +94,7 @@ class _InfDetailsState extends State<InfDetails> {
                         child: Text(
                           widget.infDataModel.name,
                           textAlign: TextAlign.start,
-                          style: GoogleFonts.montserrat(
+                          style: GoogleFonts.poppins(
                             color: color,
                             fontWeight: FontWeight.bold,
                             fontSize: 35,
@@ -119,7 +119,7 @@ class _InfDetailsState extends State<InfDetails> {
                 children: [
                   Text(
                     'Event Coordinator',
-                    style: GoogleFonts.montserrat(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
@@ -128,7 +128,7 @@ class _InfDetailsState extends State<InfDetails> {
                   SizedBox(height: 18),
                   Text(
                     widget.infDataModel.coname,
-                    style: GoogleFonts.lora(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
@@ -145,7 +145,7 @@ class _InfDetailsState extends State<InfDetails> {
                 children: [
                   Text(
                     'Description',
-                    style: GoogleFonts.montserrat(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
@@ -154,7 +154,7 @@ class _InfDetailsState extends State<InfDetails> {
                   SizedBox(height: 18),
                   Text(
                     widget.infDataModel.desc,
-                    style: GoogleFonts.lora(
+                    style: GoogleFonts.poppins(
                       color: color,
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
@@ -171,7 +171,7 @@ class _InfDetailsState extends State<InfDetails> {
                   children: [
                     Text(
                       "Date",
-                      style: GoogleFonts.montserrat(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         color: color,
                         fontWeight: FontWeight.w500,
@@ -180,7 +180,7 @@ class _InfDetailsState extends State<InfDetails> {
                     SizedBox(height: 8),
                     Text(
                       widget.infDataModel.date,
-                      style: GoogleFonts.lora(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: color,
@@ -197,7 +197,7 @@ class _InfDetailsState extends State<InfDetails> {
                   children: [
                     Text(
                       "Time",
-                      style: GoogleFonts.montserrat(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         color: color,
                         fontWeight: FontWeight.w500,
@@ -206,7 +206,7 @@ class _InfDetailsState extends State<InfDetails> {
                     SizedBox(height: 8),
                     Text(
                       widget.infDataModel.time,
-                      style: GoogleFonts.lora(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: color,
@@ -223,7 +223,7 @@ class _InfDetailsState extends State<InfDetails> {
                   children: [
                     Text(
                       "Venue",
-                      style: GoogleFonts.montserrat(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         color: color,
                         fontWeight: FontWeight.w500,
@@ -232,7 +232,7 @@ class _InfDetailsState extends State<InfDetails> {
                     SizedBox(height: 8),
                     Text(
                       widget.infDataModel.venue,
-                      style: GoogleFonts.lora(
+                      style: GoogleFonts.poppins(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: color,
@@ -270,13 +270,13 @@ class _InfDetailsState extends State<InfDetails> {
                         ),
                         child: Text(
                           "Register Now",
-                          style: GoogleFonts.montserrat(fontSize: 18, color: Colors.white),
+                          style: GoogleFonts.poppins(fontSize: 18, color: Colors.white),
                         ),
                       )
                     else
                       Text(
                         "Registration is Closed",
-                        style: GoogleFonts.montserrat(fontSize: 18, color: Colors.red, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(fontSize: 18, color: Colors.red, fontWeight: FontWeight.bold),
                       ),
 
                     if (showClosingTime && now.isBefore(registrationDeadline))
@@ -284,7 +284,7 @@ class _InfDetailsState extends State<InfDetails> {
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(
                           "(Closes at: $formattedDeadline)",
-                          style: GoogleFonts.lora(fontSize: 14, color: Colors.red),
+                          style: GoogleFonts.poppins(fontSize: 14, color: Colors.red),
                         ),
                       ),
                   ],

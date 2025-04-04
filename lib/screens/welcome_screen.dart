@@ -23,7 +23,7 @@ class WelcomeScreen extends StatelessWidget {
                 child: Center(
                   child: RichText(
                     textAlign: TextAlign.start,
-                    text: const TextSpan(
+                    text:  TextSpan(
                       children: [
                         TextSpan(
                             text:

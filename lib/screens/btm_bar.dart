@@ -31,7 +31,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
       HomeScreen(),
       //CartScreen(),
       EventScreen(),
-      CategoriesScreen(),
+      //CategoriesScreen(),
       UserScreen(),
     ];
   }
@@ -94,7 +94,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
             Icons.event_available,
             color: _isDark ? Colors.black : Colors.white,
           ),
-          Icon(Icons.category, color: _isDark ? Colors.black : Colors.white),
+          //Icon(Icons.category, color: _isDark ? Colors.black : Colors.white),
           Icon(Icons.person, color: _isDark ? Colors.black : Colors.white),
         ],
       ),
