@@ -531,89 +531,57 @@ class _EventScreenState extends State<EventScreen> {
     ),//waiting reglink, image, des ✅
 
     Event(
-      title: "Cups Lifting",
+      title: "Therukoothu",
       description: " Round 1 -  \n Round 2 - \n Round 3 - ",
-      date: "Day 2",
-      actualDate: "12.4.2025",
-      time: "10:30 AM - 12:30 PM",
+      date: "Day 3",
+      actualDate: "13.4.2025",
+      time: "11:00 AM - 11:45 AM",
+      venue: "Portigo",
+      imageUrl: ["asset/events/Equilibria/Therukuthu-Equilibria_2.png",],
+      organizer: "Kaviya B\nYamini M\nAarthi H",
+      registrationUrl: "",
+      clusterName: "Equillibria present",
+    ),//waiting reglink, image, des ✅
+
+
+    Event(
+      title: "Cups lifting",
+      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
+      date: "Day 3",
+      actualDate: "13.4.2025",
+      time: "09:30 AM - 12:00 PM",
       venue: "Stall",
-      imageUrl: ["asset/events/Sportiva/event2/PowerLifting-Sportiva_D2.png",],
+      imageUrl: ["asset/events/Equilibria/Therukuthu-Equilibria_2.png",],
       organizer: "Kaviya B\nYamini M\nAarthi H",
       registrationUrl: "",
       clusterName: "Sportiva present",
     ),//waiting reglink, image, des ✅
 
-    //access india
-
-
-
-    //Biogenesis
-
-
-
-
-
-    //electronica
-
-
-
-
-
-    //Informatica
-
-
-
-
-
-
-    //Mathematica
-
-
-
-
-
-
-    //Strategia
-
+    Event(
+      title: "Reach the ball",
+      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
+      date: "Day 3",
+      actualDate: "13.4.2025",
+      time: "09:30 AM - 12:00 PM",
+      venue: "Stall",
+      imageUrl: ["asset/events/Equilibria/Therukuthu-Equilibria_2.png",],
+      organizer: "Kaviya B\nYamini M\nAarthi H",
+      registrationUrl: "",
+      clusterName: "Sportiva present",
+    ),//waiting reglink, image, des ✅
 
     Event(
-      title: "Brain Snap Challenge",
-      description: " Round 1 - Picture Quest  \n Round 2 -  Mind maze \n Round 3 - Momentary memory ",
-      date: "Day 2",
-      actualDate: "12.4.2025",
-      time: "9:30 AM - 1:30 PM",
-      venue: "310",
-      imageUrl: [
-        "asset/events/Strategia/BrainSnap-Strategia_2/BrainSnap-Strategia_2-1.png",
-        "asset/events/Strategia/BrainSnap-Strategia_2/BrainSnap-Strategia_2-2.png",
-      ],
-      organizer: "Atchaya S",
+      title: "Strike the balloon ",
+      description: " Round 1 -  \n Round 2 - \n Round 3 - ",
+      date: "Day 3",
+      actualDate: "13.4.2025",
+      time: "09:30 AM - 12:00 PM",
+      venue: "Near Basketball court",
+      imageUrl: ["asset/events/Equilibria/Therukuthu-Equilibria_2.png",],
+      organizer: "Kaviya B\nYamini M\nAarthi H",
       registrationUrl: "",
-      clusterName: "Strategia present",
-    ),//waiting reglink, image ✅
-
-
-
-
-    //Optica
-
-
-
-
-
-
-    //Vinodha Vahini
-
-
-    //Robotics
-
-
-    //Sportiva
-
-
-
-
-
+      clusterName: "Sportiva present",
+    ),//waiting reglink, image, des ✅
 
 
   ];
@@ -649,12 +617,7 @@ class _EventScreenState extends State<EventScreen> {
   @override
   Widget build(BuildContext context) {
     final Utils utils = Utils(context);
-    // ignore: unused_local_variable
-    final themeState = utils.getTheme;
-    // ignore: unused_local_variable
-    final Color color = Utils(context).color;
-    // ignore: unused_local_variable
-    Size size = Utils(context).getScreenSize;
+    final Color color = utils.color;
 
     Map<String, List<Event>> groupedEvents = {};
     for (var event in events) {
@@ -663,17 +626,27 @@ class _EventScreenState extends State<EventScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title:  Center(
+        title: Center(
           child: Text(
             "Event Timeline",
             style: GoogleFonts.poppins(color: color, fontWeight: FontWeight.bold),
-
           ),
         ),
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       ),
-      body: SingleChildScrollView(
+      body: events.isEmpty  // ✅ Check if no events exist
+          ? Center(
+        child: Text(
+          "No Events Available",
+          style: GoogleFonts.poppins(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.grey,
+          ),
+        ),
+      )
+          : SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -683,28 +656,24 @@ class _EventScreenState extends State<EventScreen> {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // ✅ Day Label (Outside Box, Left-Aligned)
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Shimmer.fromColors(
                     baseColor: Theme.of(context).brightness == Brightness.dark
-                        ? Colors.white  // Dark mode: Base color is white
-                        : Colors.black, // Light mode: Base color is black
+                        ? Colors.white
+                        : Colors.black,
                     highlightColor: Theme.of(context).brightness == Brightness.dark
-                        ? Colors.black  // Dark mode: Highlight color is black
-                        : Colors.white, // Light mode: Highlight color is white
+                        ? Colors.black
+                        : Colors.white,
                     child: Text(
-                      entry.key, // "Day 1", "Day 2", etc.
+                      entry.key,
                       style: GoogleFonts.poppins(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        //color: color,
                       ),
                     ),
                   ),
                 ),
-
-                // ✅ Events for the day (Alternating positions)
                 Column(
                   children: entry.value.asMap().entries.map((e) {
                     int index = e.key;
@@ -719,10 +688,11 @@ class _EventScreenState extends State<EventScreen> {
                         );
                       },
                       child: Align(
-                        alignment: index % 2 == 0 ? Alignment.centerRight : Alignment.centerLeft,
+                        alignment:
+                        index % 2 == 0 ? Alignment.centerRight : Alignment.centerLeft,
                         child: TimelineItem(
                           event: e.value,
-                          isLeft: index % 2 == 0, // ✅ First event right, second left, alternating
+                          isLeft: index % 2 == 0,
                         ),
                       ),
                     );
@@ -735,4 +705,5 @@ class _EventScreenState extends State<EventScreen> {
       ),
     );
   }
+
 }

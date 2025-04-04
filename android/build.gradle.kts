@@ -1,16 +1,12 @@
 plugins {
-    // ...
-
-    // Add the dependency for the Google services Gradle plugin
     id("com.google.gms.google-services") version "4.4.2" apply false
-
-
-
 }
 
 buildscript {
     dependencies {
-        classpath("com.google.gms:google-services:4.3.10")
+        classpath("com.google.gms:google-services:4.4.2")
+        classpath ("com.android.tools.build:gradle:8.3.0")
+
     }
 
 }
@@ -36,4 +32,10 @@ subprojects {
 
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
